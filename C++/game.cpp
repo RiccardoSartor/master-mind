@@ -10,33 +10,34 @@ int main(){
 	int tentativi = 9;
 	int risposta, risposta_v[4];
 	int contatore;
-	bool stop = false, trovato, trovato_trovato;
+	bool vittoria = false, trovato, trovato_trovato;
 	
 	for(int i = 0; i < 4; i++){  //assegnazione valori random
 		numero[i] = rand()%6+1;
 	}
 	
 	//debug
-	cout << "numero -> ";
+	cout << "numero -> \t\t";
 	for(int i = 0; i < 4; i++){
 		cout << numero[i];
 	}
 	cout << endl;
 	
 	do{
-		cout << "Inserisci il numero -> ";
+		cout << "Inserisci il numero -> \t";
 		cin >> risposta;
 		
 		risposta_v[0] = ((risposta % 10000) - (risposta % 1000))/1000;
 		risposta_v[1] = ((risposta % 1000) - (risposta % 100))/100;
 		risposta_v[2] = ((risposta % 100) - (risposta % 10))/10;
 		risposta_v[3] = ((risposta % 10) - (risposta % 1))/1;
-		
+		vittoria = true;
 		for(int i = 0; i < 4; i++){
 			trovato = false;
 			if (risposta_v[i] == numero[i]){
 				cout << 'n';
 			}else{
+				vittoria = false;
 				contatore = 0;
 				while(!trovato && contatore < 4){
 					//cout << "-> " << risposta_v[i]<<endl<<"-> " << numero[contatore]<<endl<<endl;
@@ -62,6 +63,12 @@ int main(){
 			}
 		}
 		cout << endl;
-		
-	}while(!stop && tentativi > 0);
+		tentativi--;
+	}while(!vittoria && tentativi > 0);
+	
+	if(vittoria){
+		cout << "hai vinto!"<<endl;
+	}else{
+		cout << "tenativi finiti\nhai perso!"<<endl;
+	}
 }
