@@ -65,12 +65,3 @@ int main(){
 		
 	}while(!stop && tentativi > 0);
 }
-
-
-
-
-
-
-
-
-
