@@ -17,3 +17,6 @@ qualche accorgimento:
 ### CASO 2 - SI HA APERTO UN FILE ESISTENTE E SI VUOLE MODIFICARLO E SALVARLO
 
 da emulatore aperto, file trascinato al suo interno, bisogna ripetere sostanzialmente i passaggi del caso 1, basta ricordarsi sempre l'ordine e il nomeprogramma
+
+## download Vice
+https://netcologne.dl.sourceforge.net/project/vice-emu/releases/binaries/windows/GTK3VICE-3.6.1-win64.zip
