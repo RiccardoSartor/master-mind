@@ -8,3 +8,4 @@ next i
 print "numero casuale: ";ncasuale:rem stampa di prova
 rem --- INPUT E CONTROLLO ---
 for i=1 to tentativi
+123
