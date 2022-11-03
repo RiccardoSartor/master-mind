@@ -7,7 +7,7 @@
 Una volta aperto l'emulatore, per iniziare un nuovo file basterà
 
 1. andare su File > Create and attach an empty disk image > salvare il file in .d64 dove si vuole
-2. quando si vuole salvare nel file basterà eseguire il comando ' SAVE "NOMEPROGRAMMA", 8 '
+2. quando si vuole salvare nel file basterà eseguire il comando `SAVE "NOMEPROGRAMMA", 8`
 3. eseguire un comando list (altrimenti resta in "fase di salvataggio" e non salva l'ultima modifica)
 
 qualche accorgimento: 
@@ -21,6 +21,8 @@ da emulatore aperto, file trascinato al suo interno, bisogna ripetere sostanzial
 
 #ALTRO METODO (più sicuro)
 quando si ha il programma scritto e lo si vuole salvare in modo più sicuro: 
-1. eseguire il comando `PRINT CHR$(147)`
+1. eseguire il comando `PRINT CHR$(147)` (un clearscreen)
+2. andare su `Edit` > `Copy` e incollare il tutto in un file di testo su windows
+3. quando serve basta andare su `Edit` > `Paste` e tutte le linee di codice verranno importate
 ## download Vice
 https://netcologne.dl.sourceforge.net/project/vice-emu/releases/binaries/windows/GTK3VICE-3.6.1-win64.zip
