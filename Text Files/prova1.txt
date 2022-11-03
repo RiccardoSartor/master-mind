@@ -1,11 +1,10 @@
-tentativi=9
-lung=4
-rem --- generazione numero casuale ---
-for i=1 to lung
-casuale(i)=int(rnd(1)*6)+1
-ncasuale = ncasuale*10+casuale(i)
-next i
-print "numero casuale: ";ncasuale:rem stampa di prova
-rem --- INPUT E CONTROLLO ---
-for i=1 to tentativi
-123
+10 tentativi=9
+20 lung=4
+25 rem --- generazione numero casuale ---
+30 for i=1 to lung
+40 casuale(i)=int(rnd(1)*6)+1
+50 ncasuale = ncasuale*10+casuale(i)
+60 next i
+61 print "numero casuale: ";ncasuale:rem stampa di prova
+65 rem --- INPUT E CONTROLLO ---
+70 for i=1 to tentativi
