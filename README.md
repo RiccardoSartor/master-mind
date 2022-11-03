@@ -27,3 +27,11 @@ quando si ha il programma scritto e lo si vuole salvare in modo più sicuro:
 4. quando serve basta andare su `Edit` > `Paste` e tutte le linee di codice verranno importate
 ## download Vice
 https://netcologne.dl.sourceforge.net/project/vice-emu/releases/binaries/windows/GTK3VICE-3.6.1-win64.zip
+## Pallini Output 
+* Comandi pallino nero: 
+ 1. `poke 646, 0 : print "shift+q"` 
+ 2. `poke 646, 14`
+* Comandi pallino bianco: 
+ 1. `poke 646, 1 : print "shift+q"`
+ 2. `poke 646, 14`
+ 
