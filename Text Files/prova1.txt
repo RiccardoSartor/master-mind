@@ -5,4 +5,6 @@
 40 casuale(i)=int(rnd(1)*6)+1
 50 ncasuale = ncasuale*10+casuale(i)
 60 next i
-65 print "numero casuale: ";ncasuale : rem stampa di prova
+61 print "numero casuale: ";ncasuale:rem stampa di prova
+65 rem --- INPUT E CONTROLLO ---
+70 for i=1 to tentativi
