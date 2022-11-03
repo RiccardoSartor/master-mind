@@ -8,6 +8,7 @@ Una volta aperto l'emulatore, per iniziare un nuovo file basterà
 
 1. andare su File > Create and attach an empty disk image > salvare il file in .d64 dove si vuole
 2. quando si vuole salvare nel file basterà eseguire il comando ' SAVE "NOMEPROGRAMMA", 8 '
+3. eseguire un comando list (altrimenti resta in "fase di salvataggio" e non salva l'ultima modifica)
 
 qualche accorgimento: 
   * nomeprogramma e nome file non devono per forza essere identici, il nome del file è semplicemente un disco virtuale, che può contenere più programmi, quindi con più nomi diversi.
