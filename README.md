@@ -22,7 +22,8 @@ da emulatore aperto, file trascinato al suo interno, bisogna ripetere sostanzial
 #ALTRO METODO (più sicuro)
 quando si ha il programma scritto e lo si vuole salvare in modo più sicuro: 
 1. eseguire il comando `PRINT CHR$(147)` (un clearscreen)
-2. andare su `Edit` > `Copy` e incollare il tutto in un file di testo su windows
-3. quando serve basta andare su `Edit` > `Paste` e tutte le linee di codice verranno importate
+2. eseguire il comando `LIST`
+3. andare su `Edit` > `Copy` e incollare il tutto in un file di testo su windows
+4. quando serve basta andare su `Edit` > `Paste` e tutte le linee di codice verranno importate
 ## download Vice
 https://netcologne.dl.sourceforge.net/project/vice-emu/releases/binaries/windows/GTK3VICE-3.6.1-win64.zip
