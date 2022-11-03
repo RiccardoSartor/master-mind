@@ -19,5 +19,8 @@ qualche accorgimento:
 
 da emulatore aperto, file trascinato al suo interno, bisogna ripetere sostanzialmente i passaggi del caso 1, basta ricordarsi sempre l'ordine e il nomeprogramma
 
+#ALTRO METODO (più sicuro)
+quando si ha il programma scritto e lo si vuole salvare in modo più sicuro: 
+1. eseguire il comando 'codice' "PRINT CHR$(147)"
 ## download Vice
 https://netcologne.dl.sourceforge.net/project/vice-emu/releases/binaries/windows/GTK3VICE-3.6.1-win64.zip
