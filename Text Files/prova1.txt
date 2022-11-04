@@ -13,4 +13,3 @@
 70 for i=1 to tentativi : rem ricordarsi di fermare il for
 80 input "inserisci un numero: ";  numero
 90 rem estrazione dati nel vettore
-test
