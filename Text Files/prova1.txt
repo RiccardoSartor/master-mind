@@ -1,15 +1,42 @@
 10 tentativi=9
-15 max=6
-16 min=1
-20 lung=4
+11 max=6
+12 min=1
+13 lung=4
 25 rem --- generazione numero casuale ---
 26 x = rnd(-ti) : rem inizializzazione random
 30 for i=1 to lung
 40 casuale(i)=int(rnd(1)*max)+min
 50 ncasuale = ncasuale*10+casuale(i)
 60 next i
-61 print "numero casuale: ";ncasuale: rem stampa di prova
+61 print "numero casuale: "; ncasuale : rem stampa di prova
 65 rem --- input e controllo ---
 70 for i=1 to tentativi : rem ricordarsi di fermare il for
 80 input "inserisci un numero: ";  numero
-90 rem estrazione dati nel vettore
+85 rem estrazione dati nel vettore
+90 for j=lung to 1 step -1
+100 vnum(j) = numero - int(numero/10)*10
+110 numero = int(numero/10)
+120 next j
+
+121 rem stampa
+122 for j=1 to lung
+123 print vnum(j);
+124 next j
+
+125 rem --- reset vettore controllo ---
+130 for j=1 to lung
+140 nu(j) = -1
+150 next j
+
+160 cn=0 : rem conta_n
+170 cnu=1 : rem conta_numeri_usciti
+
+179 rem riga 37 cpp
+180 for j=1 to lung : rem ricordarsi di terminare
+190 for k=1 to lung : rem ricordarsi di terminare
+200 cd=0 : rem controllo_doppi
+210 for z=1 to cnu
+220 if vnum(k)=nu(z) then cd=1 
+230 end
+230 next z
+240 if (casuale(j)=vnum(k) and j=k) then
