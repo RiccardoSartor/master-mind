@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 10 tentativi=9
 11 max=6
 12 min=1
 13 lung=4
+=======
+10 tentativi=9 : rem test
+15 max=6
+16 min=1
+20 lung=4
+>>>>>>> Stashed changes
 25 rem --- generazione numero casuale ---
 26 x = rnd(-ti) : rem inizializzazione random
 30 for i=1 to lung
