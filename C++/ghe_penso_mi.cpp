@@ -10,14 +10,13 @@ int main() {
 	int casuale[length];
 	int input;
 	int pezzi_input[length];
-	int range = 6 + 1;
 	int contaN;
 	int controllo_doppi;
 	int numeri_usciti[length];
 	int conta_numeri_usciti;
 	cout << "Numero generato->\t";
 	for (int i = 0; i < length; i++) {
-		casuale[i] = rand() % range;
+		casuale[i] = rand() % 6 +1; //ATTENZIONE NON SI USA IL RANGE
 		cout << casuale[i];
 	}
 	cout << endl;
