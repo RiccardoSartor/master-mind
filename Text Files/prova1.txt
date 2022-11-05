@@ -40,3 +40,6 @@
 230 end
 230 next z
 240 if (casuale(j)=vnum(k) and j=k) then
+
+
+DA GUARDARE IF-ELSE
