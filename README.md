@@ -9,6 +9,9 @@
 - [ ] Stampa iniziale regole
 - [ ] Modifica regole personalizzate
 
+
+
+
 ### Per salvare in VICE - da michi
 
 #### CASO 1 - CREAZIONE FILE DA ZERO
