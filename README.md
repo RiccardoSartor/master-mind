@@ -1,8 +1,17 @@
 # master-mind
 
-## Per salvare in VICE - da michi
+## TO-DO LIST
+[] Commentare tutta la stampa iniziale del numero (che deve essere segreto)
+[] Aggiungere la richiesta finale se si vuole vedere la soluzione o no
+[] Richiesta finale di rigiocare o uscire
+  [] Stampa statistiche di gioco
+[] Commenti iniziali programmatori
+[] Stampa iniziale regole
+[] Modifica regole personalizzate
 
-### CASO 1 - CREAZIONE FILE DA ZERO
+### Per salvare in VICE - da michi
+
+#### CASO 1 - CREAZIONE FILE DA ZERO
 
 Una volta aperto l'emulatore, per iniziare un nuovo file basterà
 
@@ -15,7 +24,7 @@ qualche accorgimento:
   * il passo n°1 si può eseguire anche dopo un po' che si ha iniziato a programmare, basta ricordarsi di farlo prima di salvare
   * attenzione che se avete un VICE aperto e volete vedere eseguendo un altro VICE se il file è corretto, spesso darà errore perchè il programma ha accesso prioritario sul file, quindi non da accesso a un'altra istanza di questo.
 
-### CASO 2 - SI HA APERTO UN FILE ESISTENTE E SI VUOLE MODIFICARLO E SALVARLO
+#### CASO 2 - SI HA APERTO UN FILE ESISTENTE E SI VUOLE MODIFICARLO E SALVARLO
 
 da emulatore aperto, file trascinato al suo interno, bisogna ripetere sostanzialmente i passaggi del caso 1, basta ricordarsi sempre l'ordine e il nomeprogramma
 
@@ -25,6 +34,8 @@ quando si ha il programma scritto e lo si vuole salvare in modo più sicuro:
 2. eseguire il comando `LIST`
 3. andare su `Edit` > `Copy` e incollare il tutto in un file di testo su windows
 4. quando serve basta andare su `Edit` > `Paste` e tutte le linee di codice verranno importate
+
+
 ## download Vice
 https://netcologne.dl.sourceforge.net/project/vice-emu/releases/binaries/windows/GTK3VICE-3.6.1-win64.zip
 ## Pallini Output 
