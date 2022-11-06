@@ -1,13 +1,13 @@
 # master-mind
 
 ## TO-DO LIST
-- [] Commentare tutta la stampa iniziale del numero (che deve essere segreto)
-- [] Aggiungere la richiesta finale se si vuole vedere la soluzione o no
-- [] Richiesta finale di rigiocare o uscire
-  - [] Stampa statistiche di gioco
-- [] Commenti iniziali programmatori
-- [] Stampa iniziale regole
-- [] Modifica regole personalizzate
+- [ ] Commentare tutta la stampa iniziale del numero (che deve essere segreto)
+- [ ] Aggiungere la richiesta finale se si vuole vedere la soluzione o no
+- [ ] Richiesta finale di rigiocare o uscire
+  - [ ] Stampa statistiche di gioco
+- [ ] Commenti iniziali programmatori
+- [ ] Stampa iniziale regole
+- [ ] Modifica regole personalizzate
 
 ### Per salvare in VICE - da michi
 
