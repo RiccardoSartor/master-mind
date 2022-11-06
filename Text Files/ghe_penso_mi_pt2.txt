@@ -35,7 +35,7 @@
 160 next j
 170 cnu=1
 
-175rem --- primo ciclo for che scorre il numero generato random---
+175 rem --- primo ciclo for che scorre il numero generato random---
 180 for j=1 to l : rem ricordarsi il next 
 
 185 rem --- secondo ciclo for che scorre il numero da input---
