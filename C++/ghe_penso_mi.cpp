@@ -33,6 +33,9 @@ int main() {
 			// cout << endl
 			//	 << "Risposta: " << pezzi_input[j];
 		}
+		for(int j=0; j<length; j++){
+			cout<<"\t"<<pezzi_input[j]; 
+		}
 		contaN = 0; //cn=0
 		for (int j = 0; j < length; j++) { //(int i=0; i<l; i++){
 			for (int k = 0; k < length; k++) { //(int i=0; i<l; i++){
