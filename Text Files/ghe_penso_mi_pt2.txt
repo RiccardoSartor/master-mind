@@ -1,1 +1,93 @@
+10 t=9
+11 max=6
+12 min=1
+13 l=4
+20 rem --- generazione numero casuale---
+21 x = rnd(-ti) : rem inizializzazione random
+30 for i=1 to l
+40 c(i)=int(rnd(1)*max)+min
+50 nc = nc*10+c(i) : rem Creazione del numero generato per facilitare la stampa
+60 next i
+61 print "mastermind"
+65 print "numero casuale: "; nc : rem stampa numero generato 
+
+66 rem ---primo ciclo for che fa tutti i tentativi---
+70 for i=1 to t 
+
+75 rem ---imput---
+76 print "tentativo n."; i
+80 input "inserisci un numero: "; in 
+85 rem --- creazione vettore partendo da input---
+90 for j=l to 1 step -1
+100 pin(j) = in - int(in/10)*10
+110 in =int(in/10)
+120 next j
+
+121 rem --- stampa numero dato in imput come vettore---
+122 for j=1 to l
+123 print pin(j);
+124 next j
+
+129 rem --- preparazione controlli---
+130 v=0
+140 for j=1 to l : rem ---azzeramento vettore di controllo---
+150 nu(j)=-1
+160 next j
+170 cnu=1
+
+175rem --- primo ciclo for che scorre il numero generato random---
+180 for j=1 to l : rem ricordarsi il next 
+
+185 rem --- secondo ciclo for che scorre il numero da input---
+190 for k=1 to l : rem ricordarsi il next
+200 cd=0 : rem controllo doppi
+
+205 rem ---inizio terzo ciclo for controllo numeri gia usciti in imput
+210 for z=1 to cnu
+220 if pin(k)=nu(z) then cd=1
+230 next z
+
+235 rem --- confronto posizione e valore tra random e input---
+240 if c(j)=pin(k) and j=k goto 260
+250 goto 305  
+260 poke 646, 0 : print "Q";
+270 poke 646, 14
+280 v=v+1
+290 nu(cnu)=pin(k)
+300 cnu=cnu+1
+
+305 rem ---inizio controllo solo valore tra random e input---
+310 if cd=0 goto 330
+320 goto 385
+330 if c(j)=pin(k) and j<>k goto 350
+340 goto 385
+350 poke 646, 1 : print "Q";
+360 poke 646, 14
+370 nu(cnu)=pin(k)
+380 cnu=cnu+1
+
+385 rem ---fine confronti di ogni tipo---
+390 next k
+400 next j
+
+405 rem ---controllo vittoria---
+410 if v=4 goto 430 : rem METTERE 7
+420 goto 445
+430 print "-->hai vinto"
+440 i=11
+
+445 rem ---controllo perdita---
+449 print " "
+450 if i=9 and v<>4 then print "hai perso" 
+460 next i
+
+
+
+
+
+
+
+
+
+
 
