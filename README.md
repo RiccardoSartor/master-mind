@@ -9,8 +9,7 @@
 - [ ] Stampa iniziale regole
 - [ ] Modifica regole personalizzate
 
-
-
+##
 
 ### Per salvare in VICE - da michi
 
