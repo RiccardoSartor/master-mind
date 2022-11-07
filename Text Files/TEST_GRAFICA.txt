@@ -22,7 +22,7 @@
 145 ?"1 - impostazioni di gioco"
 150 ?"2 - regole di gioco"
 155 ?"3 - gioca"
-160 get a$ : if a$="" then 150
+160 get a$ : if a$="" then 160
 170 if a$="1" then 200
 180 if a$="2" then 250
 190 if a$="3" then 300
