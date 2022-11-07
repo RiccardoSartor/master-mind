@@ -55,4 +55,9 @@
 410 ?:?"il valore deve essere tra 1 e";max-1;")"
 420 input"inserisci il numero";b
 430 if (b<1 or b>(max-1)) then 410
-440 goto 200
+440 min = b : rem else cambia
+450 goto 200
+
+600 ***** regole *****
+
+900 ***** gioco *****
