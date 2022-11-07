@@ -1,6 +1,7 @@
 # master-mind
 
 ## TO-DO LIST
+- [ ] Fare dei commenti vuoti (es. `90 rem`) senza scrivere altro, per fare degli spazi al posto di lasciare delle righe vuote che non vengono interpretate come tali
 - [ ] Commentare tutta la stampa iniziale del numero (che deve essere segreto)
 - [ ] Aggiungere la richiesta finale se si vuole vedere la soluzione o no
 - [ ] Richiesta finale di rigiocare o uscire
