@@ -1,0 +1,36 @@
+10 ? chr$(147)
+15 for i=1 to 9 : print : next i
+20 poke 646, 1
+25 ?tab(13);"**************"
+30 ?tab(13);"*            *"
+35 ?tab(13);"* mastermind *"
+40 ?tab(13);"*            *"
+45 ?tab(13);"**************"
+50 for i=1 to 6 : print : next i
+55 poke 646, 14
+60 ?tab(4); "premere un tasto per continuare"
+70 get a$ : if a$="" then 70
+
+100 rem ***** menu *****
+105 ?chr$(147);
+110 poke 646, 1
+115 ?tab(11);"******************"
+120 ?tab(11);"* menu' di gioco *"
+125 ?tab(11);"******************"
+130 110 poke 646, 14
+140 ?:?"premere:":?
+145 ?"1 - impostazioni di gioco"
+150 ?"2 - regole di gioco"
+155 ?"3 - gioca"
+160 get a$ : if a$="" then 150
+170 if a$="1" then 200
+180 if a$="2" then 250
+190 if a$="3" then 300
+
+200 rem ***** impostazioni *****
+205 ?chr$(147);
+210 poke 646, 1
+215 ?tab(12);"****************"
+220 ?tab(12);"* impostazioni *"
+225 ?tab(12);"****************"
+230 poke 646, 14
