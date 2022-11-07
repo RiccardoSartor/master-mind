@@ -1,0 +1,35 @@
+9 print
+10 printtab(9);"####################"
+20 printtab(9);"# istruzioni gioco #"
+30 printtab(9);"####################"
+
+40 print""
+41 print""
+
+50 print;" ############# obiettivo: #############"
+51 poke 646, 0: print"Q";
+52 poke 646, 14
+60 print"indovinare il codice segreto"
+
+70 print""
+71 print""
+
+80 print" ########## cose da sapere: ###########"
+81 poke 646, 1: print"Q";
+82 poke 646, 14
+90 print"hai 9 tentativi"
+92 print
+93 poke 646, 0: print"Q";
+94 poke 646, 14
+100 print"un pallino nero corrisponde ad una"
+110 print" cifra inserita nella posizione giusta"
+111 print""
+112 poke 646, 1: print"Q";
+113 poke 646, 14
+120 print"un pallino bianco corrisponde ad una"
+130 print" cifra giusta inserita nella posizione"
+140 print" sbagliata"
+141 print""
+142 poke 646, 0: print"Q";
+143 poke 646, 14
+150 print"nessun pallino corrisponde ad una cifra sbagliata"

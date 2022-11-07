@@ -1,0 +1,29 @@
+10 printtab(9);"####################"
+20 printtab(9);"# istruzioni gioco #"
+30 printtab(9);"####################"
+
+40 print""
+41 print""
+
+50 print"obiettivo:"
+60 print"Qindovinare il numero segreto"
+
+70 print""
+71 print""
+
+80 print"cose da sapere:"
+81 poke 646, 0 : print "Q";
+82 poke 646, 14
+90 print"hai 9 tentativi per indovinare il"
+91 print" numero"
+92 print
+100 print"Qun pallino nero corrisponde ad una"
+110 print" cifra inserita nella posizione giusta"
+111 print""
+112 poke 646, 0:print"Q";
+113 poke 646, 14
+120 print"un pallino bianco corrisponde ad una"
+130 print" cifra giusta inserita nella posizione"
+140 print" sbagliata"
+141 print""
+150 print"Qnessun pallino corrisponde ad una cifra sbagliata"
