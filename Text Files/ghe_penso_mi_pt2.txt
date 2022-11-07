@@ -9,11 +9,10 @@
 50 nc = nc*10+c(i) : rem Creazione del numero generato per facilitare la stampa
 60 next i
 61 print "mastermind"
-65 print "numero casuale: "; nc : rem stampa numero generato 
+65 rem ---print "numero casuale: "; nc : rem stampa numero generato---
 
 66 rem ---primo ciclo for che fa tutti i tentativi---
 70 for i=1 to t 
-
 75 rem ---imput---
 76 print "tentativo n."; i
 80 input "inserisci un numero: "; in 
@@ -80,6 +79,7 @@
 449 print " "
 450 if i=9 and v<>4 then print "hai perso" 
 460 next i
+
 
 
 
