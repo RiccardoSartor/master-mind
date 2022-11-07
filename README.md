@@ -6,12 +6,12 @@
 - [ ] Chiedere se confermare il numero o reinserirlo
 - [x] Commentare tutta la stampa iniziale del numero (che deve essere segreto)
 - [ ] Aggiungere la richiesta finale se si vuole vedere la soluzione o no
-- [ ] Richiesta finale di rigiocare o uscire
+- [ ] Richiesta finale di rigiocare o uscire  (NUOVO: PREMERE UN TASTO PER TORNARE AL MENU' PRINCIPALE [riga 200])
   - [ ] Stampa statistiche di gioco
   - [ ] Opzionale Salva su file
 - [ ] Commenti iniziali programmatori
 - [ ] Stampa iniziale regole
-- [ ] Modifica regole personalizzate
+- [x] Modifica impostazioni personalizzate
 
 ##
 
