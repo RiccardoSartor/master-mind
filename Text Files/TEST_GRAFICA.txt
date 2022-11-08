@@ -83,12 +83,12 @@
 600 rem ***** regole *****
 605 ?chr$(147)
 610 poke 646, 1
-615 ?tab(9);"####################"
-620 ?tab(9);"# istruzioni gioco #"
-625 ?tab(9);"####################"
+615 ?tab(10);"####################"
+620 ?tab(10);"# istruzioni gioco #"
+625 ?tab(10);"####################"
 630 poke 646, 14
 
-640 ?:?:?;" ############# obiettivo: #############"
+640 ?:?;" ############# obiettivo: #############"
 645 poke 646, 0: ?"Q";
 650 poke 646, 14
 655 ?"indovinare il codice segreto"
@@ -109,7 +109,9 @@
 740 ?:poke 646, 0: ?"Q";
 745 poke 646, 14
 750 ?"nessun pallino corrisponde ad una cifra sbagliata"
-760 rem aggiungere goto menu
+760 ?:?:?tab(2); "premere un tasto per tornare al menu"
+770 get a$ : if a$="" then 170
+780 goto 200
 
 900 rem ***** gioco *****
 
