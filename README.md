@@ -5,12 +5,14 @@
 - [x] Modifica impostazioni personalizzate
 - [x] Commentare tutta la stampa iniziale del numero (che deve essere segreto)
 - [ ] Grafica bella
-  - [ ] Tabella
+  - [x] Tabella
+  - [ ] Stampa elementi nella tabella
+- [ ] input con get
 - [ ] Aggiungere stampa soluzione in caso di perdita
 - [ ] Richiesta finale di rigiocare o uscire  (NUOVO: PREMERE UN TASTO PER TORNARE AL MENU' PRINCIPALE [riga 200])
   - [ ] Stampa statistiche di gioco
   - [ ] Opzionale Salva su file
-- [ ] Commenti iniziali programmatori
+- [ ] Crediti
 
 ## simboli utili 
 
