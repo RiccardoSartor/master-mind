@@ -21,23 +21,29 @@
 160 ?tab(4); "premere un tasto per continuare"
 170 get a$ : if a$="" then 170
 
-200 rem ***** menu *****
-205 ?chr$(147)
-210 poke 646, 1
-215 ?tab(11);"******************"
-220 ?tab(11);"* menu' di gioco *"
+200 poke 53280, 12
+205 poke 53281, 11
+210 rem ***** menu *****
+215 ?chr$(147)
+220 poke 646, 13
 225 ?tab(11);"******************"
-230 poke 646, 14
-240 ?:?"premere:"
-245 ?:?"1 - impostazioni di gioco"
-246 ?:?"2 - regole di gioco"
-247 ?:?"3 - gioca"
-248 ?:?"4 - esci dal gioco"
-260 get a$ : if a$="" then 260
-270 if a$="1" then 300:rem goto impostazioni
-271 if a$="2" then 600:rem goto regole
-272 if a$="3" then 900:rem goto gioco
-273 if a$="4" then 10000:rem esci dal gioco
+230 ?tab(11);"* ";
+235 poke 646, 3
+240 ?"menu' di gioco ";
+245 poke 646, 13
+250 ?"*"
+255 ?tab(11);"******************"
+260 poke 646, 14
+265 ?:?"premere:"
+270 ?:?"1 - impostazioni di gioco"
+272 ?:?"2 - regole di gioco"
+274 ?:?"3 - gioca"
+276 ?:?"4 - esci dal gioco"
+278 get a$ : if a$="" then 278
+280 if a$="1" then 300:rem goto impostazioni
+285 if a$="2" then 600:rem goto regole
+290 if a$="3" then 900:rem goto gioco
+295 if a$="4" then 10000:rem esci dal gioco
 
 300 rem ***** impostazioni *****
 305 ?chr$(147)
