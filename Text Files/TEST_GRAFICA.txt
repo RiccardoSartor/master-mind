@@ -3,8 +3,36 @@
 30 ?chr$(17); : rem cursore giu di 1
 40 ?chr$(29); : rem cursore a destra di 1
 
+
+
 900 rem ***** gioco *****
 905 ?chr$(147)
+
+910 rem ***** creazione tabella *****
+
+920 rem ***** preparazione bordi *****
+921 b1$="UCCC"+chr$(178)+"CCCCCC"+chr$(178)+"CCCCCCI"
+922 b2$=chr$(171)+"CCC"+chr$(123)+"CCCCCC"+chr$(123)+"CCCCCC"+chr$(179)
+923 b3$="JCCC"+chr$(177)+"CCCCCC"+chr$(177)+"CCCCCCK"
+924 r1$=chr$(155)+"B "+chr$(5)+"t "+chr$(155)+"B "+chr$(5)
+925 r1$=r1$+"cod: "+chr$(155)+"B "+chr$(5)+"ris: "+chr$(155)+"B"
+926 s0$="B   B      B      B"
+
+930 rem ***** stampa tabella *****
+940 ?tab(20);chr$(155);b1$
+941 ?tab(20);chr$(155);s0$
+942 ?tab(20);r1$
+943 ?tab(20);chr$(155);s0$
+950 for i=1 to 9
+955 ?tab(20);chr$(155);b2$
+960 ?tab(20);s0$
+965 next i
+970 ?tab(20);chr$(155);b3$
+
+1000 s$=chr$(19)+chr$(17)
+
+
+
 
 1075 rem ***** stampa numero dato in input come vettore***** STAMPA CHE é DA METTERE NELLA TABELLA
 1080 for j=1 to l
