@@ -145,8 +145,8 @@
 1020 b2$=chr$(155)+chr$(171)+"CCC"+chr$(123)
 1025 b2$=b2$+"CCCCCC"+chr$(123)+"CCCCCC"+chr$(179)
 1030 b3$=chr$(155)+"JCCC"+chr$(177)+"CCCCCC"+chr$(177)+"CCCCCCK"
-1040 r1$=chr$(155)+"B "+chr$(5)+"t "+chr$(155)+"B "+chr$(5)
-1045 r1$=r1$+"cod: "+chr$(155)+"B "+chr$(5)+"ris: "+chr$(155)+"B"
+1040 r1$=chr$(155)+"B "+chr$(154)+"t "+chr$(155)+"B "+chr$(154)
+1045 r1$=r1$+"cod: "+chr$(155)+"B "+chr$(154)+"ris: "+chr$(155)+"B"
 1060 s0$=chr$(155)+"B   B      B      B"
 
 1100 rem ***** stampa tabella *****
@@ -161,8 +161,16 @@
 1180 next i
 1190 ?tab(20);b3$
 
-1200 rem ***** primo ciclo for che fa tutti i tentativi ***** 
-1201 for i=1 to t 
-1202 next i
+1200 rem ***** inizio input *****
+1201 poke 646, 14
+1205 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)
+1210 for i=1 to t
+1215 ?s$;" tentativo n.";i
+1220 get a$ : if a$="" then 1220
+1230 next i
+
+1600 rem ***** primo ciclo for che fa tutti i tentativi ***** 
+1601 for i=1 to t 
+1602 next i
 
 10000 rem ***** esci *****
