@@ -18,7 +18,7 @@
 170 get a$ : if a$="" then 170
 
 200 rem ***** menu *****
-205 ?chr$(147);
+205 ?chr$(147)
 210 poke 646, 1
 215 ?tab(11);"******************"
 220 ?tab(11);"* menu' di gioco *"
@@ -36,7 +36,7 @@
 273 if a$="4" then 10000:rem esci dal gioco
 
 300 rem ***** impostazioni *****
-305 ?chr$(147);
+305 ?chr$(147)
 310 poke 646, 1
 315 ?tab(12);"****************"
 320 ?tab(12);"* impostazioni *"
