@@ -12,6 +12,11 @@
   - [ ] Opzionale Salva su file
 - [ ] Commenti iniziali programmatori
 
+## simboli utili 
+
+dal sito https://www.c64-wiki.com/wiki/control_character 
+
+UTILIZZO --> `print chr$(codice ascii nella tabella)`
 
 ##
 
