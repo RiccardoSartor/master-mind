@@ -5,8 +5,8 @@
 - [x] Modifica impostazioni personalizzate
 - [x] Commentare tutta la stampa iniziale del numero (che deve essere segreto)
 - [ ] Grafica bella
-- [ ] ? Chiedere se confermare il numero o reinserirlo
-- [ ] Aggiungere la richiesta finale se si vuole vedere la soluzione o no
+  - [ ] Tabella
+- [ ] Aggiungere stampa soluzione in caso di perdita
 - [ ] Richiesta finale di rigiocare o uscire  (NUOVO: PREMERE UN TASTO PER TORNARE AL MENU' PRINCIPALE [riga 200])
   - [ ] Stampa statistiche di gioco
   - [ ] Opzionale Salva su file
