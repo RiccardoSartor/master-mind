@@ -1,30 +1,39 @@
-600 rem ***** regole *****
-605 ?chr$(147)
-610 poke 646, 1
-615 ?tab(10);"********************"
-620 ?tab(10);"* istruzioni gioco *"
+600 poke 53280, 12
+605 poke 53281, 11
+610 rem ***** regole *****
+615 ?chr$(147)
+620 poke 646, 13
 625 ?tab(10);"********************"
-630 poke 646, 14
+630 ?tab(10);"*";
+635 poke 646, 3
+640 ?" istruzioni gioco";
+645 poke 646, 13
+650 ?" *"
+655 ?tab(10);"********************"
+660 poke 646, 14
 
-640 ?:?;" ************* obiettivo: *************"
-645 poke 646, 0: ?"Q";
-650 poke 646, 14
-655 ?"indovinare il codice segreto"
+665 ?:?;" ************* obiettivo: *************"
+670 poke 646, 0: ?" Q";
+675 poke 646, 14
+680 ?"indovinare il codice segreto"
 
-670 ?:?" ********** cose da sapere: ***********"
-675 poke 646, 1: ?"Q";
-680 poke 646, 14
-690 ?"hai";t;"tentativi"
-695 ?:poke 646, 0: ?"Q";
-700 poke 646, 14
-705 ?"un pallino nero corrisponde ad una"
-710 ?" cifra inserita nella posizione giusta"
-715 ?:poke 646, 1: ?"Q";
-720 poke 646, 14
-725 ?"un pallino bianco corrisponde ad una"
-730 ?" cifra giusta inserita nella posizione"
-735 ?" sbagliata"
-740 ?:poke 646, 0: ?"Q";
-745 poke 646, 14
-750 ?"nessun pallino corrisponde ad una cifra sbagliata"
-760 ?:?:?tab(2); "premere un tasto per tornare al menu"
+685 ?:?" ********** cose da sapere: ***********"
+690 poke 646, 1: ?" Q";
+695 poke 646, 14
+700 ?"hai";t;"tentativi"
+705 ?:poke 646, 0: ?" Q";
+710 poke 646, 14
+715 ?"un pallino nero corrisponde ad una"
+720 ?"  cifra inserita nella posizione giusta"
+725 ?:poke 646, 1: ?" Q";
+730 poke 646, 14
+735 ?"un pallino bianco corrisponde ad una"
+740 ?"  cifra giusta inserita nella posizione"
+745 ?"  sbagliata"
+750 ?:poke 646, 0: ?" Q";
+755 poke 646, 14
+760 ?"nessun pallino corrisponde ad una"
+765 ?"  cifra sbagliata"
+770 ?:?:?tab(2); "premere un tasto per tornare al menu"
+775 get a$ : if a$="" then 775
+780 goto 200
