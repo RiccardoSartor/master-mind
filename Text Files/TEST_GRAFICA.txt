@@ -1,3 +1,8 @@
+10 ?chr$(147); : rem cls
+20 ?chr$(19); : rem cursore in alto a sinistra
+30 ?chr$(17); : rem cursore giu di 1
+40 ?chr$(29); : rem cursore a destra di 1
+
 900 rem ***** gioco *****
 905 ?chr$(147)
 
