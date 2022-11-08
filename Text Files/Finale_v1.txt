@@ -4,6 +4,9 @@
 12 t = 9
 13 l=4
 
+50 poke 53281, 11 : rem sfondo
+51 poke 53280, 12 : rem bordi esterni schermo
+
 100 rem ***** inizio *****
 105 ? chr$(147)
 110 for i=1 to 9 : ? : next i
@@ -115,7 +118,6 @@
 780 goto 200
 
 900 rem ***** gioco *****
-905 ?chr$(147)
 910 rem ***** generazione codice casuale *****
 920 x = rnd(-ti) : rem inizializzazione random
 930 for i=1 to l
@@ -124,73 +126,27 @@
 960 next i
 970 rem ?"numero casuale: "; nc : rem stampa codice generato
 
-1000 rem ***** primo ciclo for che fa tutti i tentativi ***** 
-1010 for i=1 to t 
+1000 rem ***** preparazione bordi *****
+1011 b1$="UCCC"+chr$(178)+"CCCCCC"+chr$(178)+"CCCCCCI"
+1012 b2$=chr$(171)+"CCC"+chr$(123)+"CCCCCC"+chr$(123)+"CCCCCC"+chr$(179)
+1013 b3$="JCCC"+chr$(177)+"CCCCCC"+chr$(177)+"CCCCCCK"
+1014 r1$=chr$(155)+"B "+chr$(5)+"t "+chr$(155)+"B "+chr$(5)
+1015 r1$=r1$+"cod: "+chr$(155)+"B "+chr$(5)+"ris: "+chr$(155)+"B"
+1016 s0$="B   B      B      B"
 
-1020 rem ***** input***** 
-1030 print "tentativo n."; i
-1040 input "inserisci un numero: "; in 
+930 rem ***** stampa tabella *****
+940 ?tab(20);chr$(155);b1$
+941 ?tab(20);chr$(155);s0$
+942 ?tab(20);r1$
+943 ?tab(20);chr$(155);s0$
+950 for i=1 to t
+955 ?tab(20);chr$(155);b2$
+960 ?tab(20);s0$
+965 next i
+970 ?tab(20);chr$(155);b3$
 
-1050 rem ***** creazione vettore partendo da input ***** 
-1060 for j=l to 1 step -1
-1062 pin(j) = in - int(in/10)*10
-1064 in = int(in/10)
-1070 next j
-
-STAMPA CHE é DA METTERE NELLA TABELLA
-1075 rem ***** stampa numero dato in input come vettore*****
-1080 for j=1 to l
-1081 print pin(j);
-1090 next j
-
-1500 rem ***** preparazione controlli *****
-1510 v=0
-1515 cnu=1
-1520 for j=1 to l : nu(j)=-1 : next j : rem ***** azzeramento v controllo *****
-
-1550 rem ***** primo ciclo for che scorre il numero generato random*****
-1560 for j=1 to l : rem ricordarsi il next FATTO
-
-1570 rem ***** secondo ciclo for che scorre il numero da input*****
-1580 for k=1 to l : rem ricordarsi il next FATTO
-1590 cd=0 : rem controllo doppi
-
-1600 rem *****inizio terzo ciclo for controllo numeri gia usciti in imput
-1610 for z=1 to cnu
-1620 if pin(k)=nu(z) then cd=1
-1630 next z
-
-1650 rem ***** confronto posizione e valore tra random e input*****
-1660 if (c(j)=pin(k) and j=k) goto 1680
-1670 goto 305  
-1680 poke 646, 0 : print "Q"; : poke 646, 14
-1690 v=v+1
-1700 nu(cnu)=pin(k)
-1710 cnu=cnu+1
-
-305 rem *****inizio controllo solo valore tra random e input*****
-310 if cd=0 goto 330
-320 goto 385
-330 if c(j)=pin(k) and j<>k goto 350
-340 goto 385
-350 poke 646, 1 : print "Q";
-360 poke 646, 14
-370 nu(cnu)=pin(k)
-380 cnu=cnu+1
-
-385 rem *****fine confronti di ogni tipo*****
-390 next k
-400 next j
-
-405 rem *****controllo vittoria*****
-410 if v=4 goto 430 : rem METTERE 7
-420 goto 445
-430 print "-->hai vinto"
-440 i=11
-
-445 rem *****controllo perdita*****
-449 print " "
-450 if i=9 and v<>4 then print "hai perso" 
-460 next i
+1200 rem ***** primo ciclo for che fa tutti i tentativi ***** 
+1201 for i=1 to t 
+1202 next i
 
 10000 rem ***** esci *****
