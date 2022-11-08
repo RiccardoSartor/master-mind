@@ -56,4 +56,10 @@ https://netcologne.dl.sourceforge.net/project/vice-emu/releases/binaries/windows
 * Comandi pallino bianco: 
  1. `poke 646, 1 : print "shift+q"`
  2. `poke 646, 14`
+ ## Colori scelti
+ 1. Scritte mormali comando: 'poke 646, 14'
+ 2. Titoli comando: 'poke 646, 3'
+ 3. Contorno titoli comando: 'poke 646, 13'
+ 4. Contorno Schermo e linee tabella comando: 'poke 53280, 12'
+ 5. Fondo comando: 'poke 53281, 11'
  
