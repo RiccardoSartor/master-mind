@@ -24,7 +24,7 @@
 220 ?tab(11);"* menu' di gioco *"
 225 ?tab(11);"******************"
 230 poke 646, 14
-240 ?:?"premere:":?
+240 ?:?"premere:"
 245 ?:?"1 - impostazioni di gioco"
 246 ?:?"2 - regole di gioco"
 247 ?:?"3 - gioca"
