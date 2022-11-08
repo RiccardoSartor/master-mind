@@ -1,57 +1,39 @@
-10 ?chr$(147); : rem cls
-20 ?chr$(19); : rem cursore in alto a sinistra
-30 ?chr$(17); : rem cursore giu di 1
-40 ?chr$(29); : rem cursore a destra di 1
+5 rem **** variabili e altro *****
+10 min = 1
+11 max = 6
+12 t = 9
+13 l = 4
+50 poke 53281, 11 : rem sfondo
+51 poke 53280, 12 : rem bordi esterni schermo
 
-
-
-
-
-10 t= 9
-15 poke 53281, 11
-
-900 rem ***** gioco *****
 905 ?chr$(147)
 
-910 rem ***** creazione tabella *****
+1000 rem ***** preparazione bordi *****
+1010 b1$=chr$(155)+"UCCC"+chr$(178)+"CCCCCC"+chr$(178)+"CCCCCCI"
+1020 b2$=chr$(155)+chr$(171)+"CCC"+chr$(123)
+1025 b2$=b2$+"CCCCCC"+chr$(123)+"CCCCCC"+chr$(179)
+1030 b3$=chr$(155)+"JCCC"+chr$(177)+"CCCCCC"+chr$(177)+"CCCCCCK"
+1040 r1$=chr$(155)+"B "+chr$(154)+"t "+chr$(155)+"B "+chr$(154)
+1045 r1$=r1$+"cod: "+chr$(155)+"B "+chr$(154)+"ris: "+chr$(155)+"B"
+1060 s0$=chr$(155)+"B   B      B      B"
 
-920 rem ***** preparazione bordi *****
-921 b1$="UCCC"+chr$(178)+"CCCCCC"+chr$(178)+"CCCCCCI"
-922 b2$=chr$(171)+"CCC"+chr$(123)+"CCCCCC"+chr$(123)+"CCCCCC"+chr$(179)
-923 b3$="JCCC"+chr$(177)+"CCCCCC"+chr$(177)+"CCCCCCK"
-924 r1$=chr$(155)+"B "+chr$(5)+"t "+chr$(155)+"B "+chr$(5)
-925 r1$=r1$+"cod: "+chr$(155)+"B "+chr$(5)+"ris: "+chr$(155)+"B"
-926 s0$="B   B      B      B"
+1100 rem ***** stampa tabella *****
+1105 ?chr$(147)
+1110 ?tab(20);b1$
+1120 ?tab(20);s0$
+1130 ?tab(20);r1$
+1140 ?tab(20);s0$
+1150 for i=1 to t
+1160 ?tab(20);b2$
+1170 ?tab(20);s0$
+1180 next i
+1190 ?tab(20);b3$
 
-930 rem ***** stampa tabella *****
-940 ?tab(20);chr$(155);b1$
-941 ?tab(20);chr$(155);s0$
-942 ?tab(20);r1$
-943 ?tab(20);chr$(155);s0$
-950 for i=1 to t
-955 ?tab(20);chr$(155);b2$
-960 ?tab(20);s0$
-965 next i
-970 ?tab(20);chr$(155);b3$
+1200 rem ***** inizio input *****
+1201 poke 646, 14
+1205 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)
+1210 for i=1 to t
+1215 ?s$;" tentativo n.";i
+1220 get a$ : if a$="" then 1220
+1230 next i
 
-1000 rem ***** inizio input *****
-1001 poke 646, 14
-1005 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)
-1010 for i=1 to t
-1015 ?s$;" tentativo n.";i
-1020 get a$ : if a$="" then 1020
-1100 next i
-
-
-
-
-
-
-
-1075 rem ***** stampa numero dato in input come vettore***** STAMPA CHE é DA METTERE NELLA TABELLA
-1080 for j=1 to l
-1081 print pin(j);
-1090 next j
-
-1500 rem ***** preparazione controlli *****
-10000 rem ***** esci *****

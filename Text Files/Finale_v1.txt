@@ -2,7 +2,7 @@
 10 min = 1
 11 max = 6
 12 t = 9
-13 l=4
+13 l = 4
 
 50 poke 53281, 11 : rem sfondo
 51 poke 53280, 12 : rem bordi esterni schermo
