@@ -114,7 +114,7 @@
 745 poke 646, 14
 750 ?"nessun pallino corrisponde ad una cifra sbagliata"
 760 ?:?:?tab(2); "premere un tasto per tornare al menu"
-770 get a$ : if a$="" then 170
+770 get a$ : if a$="" then 770
 780 goto 200
 
 900 rem ***** gioco *****
@@ -127,23 +127,25 @@
 970 rem ?"numero casuale: "; nc : rem stampa codice generato
 
 1000 rem ***** preparazione bordi *****
-1011 b1$="UCCC"+chr$(178)+"CCCCCC"+chr$(178)+"CCCCCCI"
-1012 b2$=chr$(171)+"CCC"+chr$(123)+"CCCCCC"+chr$(123)+"CCCCCC"+chr$(179)
-1013 b3$="JCCC"+chr$(177)+"CCCCCC"+chr$(177)+"CCCCCCK"
-1014 r1$=chr$(155)+"B "+chr$(5)+"t "+chr$(155)+"B "+chr$(5)
-1015 r1$=r1$+"cod: "+chr$(155)+"B "+chr$(5)+"ris: "+chr$(155)+"B"
-1016 s0$="B   B      B      B"
+1010 b1$=chr$(155)+"UCCC"+chr$(178)+"CCCCCC"+chr$(178)+"CCCCCCI"
+1020 b2$=chr$(155)+chr$(171)+"CCC"+chr$(123)
+1025 b2$=b2$+"CCCCCC"+chr$(123)+"CCCCCC"+chr$(179)
+1030 b3$=chr$(155)+"JCCC"+chr$(177)+"CCCCCC"+chr$(177)+"CCCCCCK"
+1040 r1$=chr$(155)+"B "+chr$(5)+"t "+chr$(155)+"B "+chr$(5)
+1045 r1$=r1$+"cod: "+chr$(155)+"B "+chr$(5)+"ris: "+chr$(155)+"B"
+1060 s0$=chr$(155)+"B   B      B      B"
 
-930 rem ***** stampa tabella *****
-940 ?tab(20);chr$(155);b1$
-941 ?tab(20);chr$(155);s0$
-942 ?tab(20);r1$
-943 ?tab(20);chr$(155);s0$
-950 for i=1 to t
-955 ?tab(20);chr$(155);b2$
-960 ?tab(20);s0$
-965 next i
-970 ?tab(20);chr$(155);b3$
+1100 rem ***** stampa tabella *****
+1105 ?chr$(147)
+1110 ?tab(20);b1$
+1120 ?tab(20);s0$
+1130 ?tab(20);r1$
+1140 ?tab(20);s0$
+1150 for i=1 to t
+1160 ?tab(20);b2$
+1170 ?tab(20);s0$
+1180 next i
+1190 ?tab(20);b3$
 
 1200 rem ***** primo ciclo for che fa tutti i tentativi ***** 
 1201 for i=1 to t 
