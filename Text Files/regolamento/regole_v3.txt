@@ -1,0 +1,37 @@
+00 ?chr$(147)
+10 poke 646, 1
+20 ?tab(9);"####################"
+30 printtab(9);"# istruzioni gioco #"
+40 printtab(9);"####################"
+50 poke 646, 14
+
+60 print""
+70 print""
+
+80 print;" ############# obiettivo: #############"
+90 poke 646, 0: print"Q";
+100 poke 646, 14
+110 print"indovinare il codice segreto"
+
+120 print""
+130 print""
+
+140 print" ########## cose da sapere: ###########"
+150 poke 646, 1: print"Q";
+160 poke 646, 14
+170 print"hai 9 tentativi"
+180 print
+190 poke 646, 0: print"Q";
+200 poke 646, 14
+210 print"un pallino nero corrisponde ad una"
+220 print" cifra inserita nella posizione giusta"
+230 print""
+240 poke 646, 1: print"Q";
+250 poke 646, 14
+260 print"un pallino bianco corrisponde ad una"
+270 print" cifra giusta inserita nella posizione"
+280 print" sbagliata"
+290 print""
+300 poke 646, 0: print"Q";
+310 poke 646, 14
+320 print"nessun pallino corrisponde ad una cifra sbagliata"
