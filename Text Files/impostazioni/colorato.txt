@@ -1,0 +1,17 @@
+300 rem ***** impostazioni *****
+305 ?chr$(147)
+310 poke 646, 13
+315 ?tab(12);"****************"
+320 ?tab(12);"* ";:poke 646, 3:?"impostazioni";:poke 646, 13:?" *"
+325 ?tab(12);"****************"
+330 poke 646, 14
+340 ?:?" premere:"
+345 ?:?" 1-cambia il num minimo (ora:";min;")"
+346 ?:?" 2-cambia il num massimo (ora:";max;")"
+347 ?:?" 3-cambia il num di tentativi (ora:";t;")"
+348 ?:?" 4-torna al menu' principale"
+360 get a$ : if a$="" then 360
+370 if a$="1" then 400:rem modifica min
+371 if a$="2" then 450:rem modifica max
+372 if a$="3" then 500:rem modifica tentativi
+373 if a$="4" then 200:rem torna al menu

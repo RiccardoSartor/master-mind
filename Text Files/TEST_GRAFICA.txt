@@ -35,5 +35,6 @@
 1210 for i=1 to t
 1215 ?s$;" tentativo n.";i
 1220 get a$ : if a$="" then 1220
-1230 next i
 
+
+2000 next i

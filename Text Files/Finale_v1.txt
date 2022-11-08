@@ -50,9 +50,9 @@
 
 300 rem ***** impostazioni *****
 305 ?chr$(147)
-310 poke 646, 1
+310 poke 646, 13
 315 ?tab(12);"****************"
-320 ?tab(12);"* impostazioni *"
+320 ?tab(12);"* ";:poke 646, 3:?"impostazioni";:poke 646, 13:?" *"
 325 ?tab(12);"****************"
 330 poke 646, 14
 340 ?:?" premere:"
