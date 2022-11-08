@@ -26,9 +26,7 @@
 160 ?tab(4); "premere un tasto per continuare"
 170 get a$ : if a$="" then 170
 
-200 poke 53280, 12
-205 poke 53281, 11
-210 rem ***** menu *****
+200 rem ***** menu *****
 215 ?chr$(147)
 220 poke 646, 13
 225 ?tab(11);"******************"
@@ -95,9 +93,7 @@
 520 t = b : rem else cambia
 525 goto 300
 
-600 poke 53280, 12
-605 poke 53281, 11
-610 rem ***** regole *****
+600 rem ***** regole *****
 615 ?chr$(147)
 620 poke 646, 13
 625 ?tab(10);"********************"
