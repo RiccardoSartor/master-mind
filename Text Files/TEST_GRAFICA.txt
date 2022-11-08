@@ -1,87 +1,34 @@
-5 rem **** variabili e altro *****
-10 min = 1
-11 max = 6
-12 tentativi = 9
+00 ?chr$(147)
+10 poke 646, 1
+20 ?tab(9);"####################"
+30 ?tab(9);"# istruzioni gioco #"
+40 ?tab(9);"####################"
+50 poke 646, 14
 
-100 rem ***** inizio *****
-105 ? chr$(147)
-110 for i=1 to 9 : print : next i
-120 poke 646, 1
-125 ?tab(13);"**************"
-130 ?tab(13);"*            *"
-135 ?tab(13);"* mastermind *"
-140 ?tab(13);"*            *"
-145 ?tab(13);"**************"
-150 for i=1 to 6 : print : next i
-155 poke 646, 14
-160 ?tab(4); "premere un tasto per continuare"
-170 get a$ : if a$="" then 170
+60 ?:?:?;" ############# obiettivo: #############"
+70 poke 646, 0: ?"Q";
+80 poke 646, 14
+90 ?"indovinare il codice segreto"
 
-200 rem ***** menu *****
-205 ?chr$(147);
-210 poke 646, 1
-215 ?tab(11);"******************"
-220 ?tab(11);"* menu' di gioco *"
-225 ?tab(11);"******************"
-230 poke 646, 14
-240 ?:?"premere:":?
-245 ?:?"1 - impostazioni di gioco"
-246 ?:?"2 - regole di gioco"
-247 ?:?"3 - gioca"
-248 ?:?"4 - esci dal gioco"
-260 get a$ : if a$="" then 260
-270 if a$="1" then 300:rem goto impostazioni
-271 if a$="2" then 600:rem goto regole
-272 if a$="3" then 900:rem goto gioco
-273 if a$="4" then 10000:rem esci dal gioco
+120 ?""
+130 ?""
 
-300 rem ***** impostazioni *****
-305 ?chr$(147);
-310 poke 646, 1
-315 ?tab(12);"****************"
-320 ?tab(12);"* impostazioni *"
-325 ?tab(12);"****************"
-330 poke 646, 14
-340 ?:?"premere:"
-345 ?:?"1-cambia il num minimo (ora:";min;")"
-346 ?:?"2-cambia il num massimo (ora:";max;")"
-347 ?:?"3-cambia il num di tentativi (ora:";tentativi;")"
-348 ?:?"4-torna al menu' principale"
-360 get a$ : if a$="" then 360
-370 if a$="1" then 400:rem modifica min
-371 if a$="2" then 450:rem modifica max
-372 if a$="3" then 500:rem modifica tentativi
-373 if a$="4" then 200:rem torna al menu
-
-400 rem ***** modifica min *****
-401 ?:?"***** modifica minimo *****"
-402 ?"valore default: 1"
-405 ?"il valore deve essere tra 1 e";max-1
-410 input"inserisci il numero";b
-415 if (b<1 or b>(max-1)) then 405 : rem non corretto
-420 min = b : rem else cambia
-425 goto 300
-
-450 rem ***** modifica max *****
-451 ?:?"***** modifica massimo *****"
-452 ?"valore default: 6"
-455 ?"il valore deve essere tra";min+1;"e 9"
-460 input"inserisci il numero";b
-465 if (b<min+1 or b>9) then 455 : rem non corretto
-470 max = b : rem else cambia
-475 goto 300
-
-500 rem ***** modifica tentativi ******
-501 ?:?"***** modifica tentativi *****"
-502 ?"valore default: 9"
-505 ?"il valore deve essere tra 1 e 9"
-510 input"inserisci il numero";b
-515 if (b<1 or b>9) then 505 : rem non corretto
-520 tentativi = b : rem else cambia
-525 goto 300
-
-600 rem ***** regole *****
-
-900 rem ***** gioco *****
-
-10000 rem ***** esci *****
+140 ?" ########## cose da sapere: ###########"
+150 poke 646, 1: ?"Q";
+160 poke 646, 14
+170 ?"hai 9 tentativi"
+180 ?
+190 poke 646, 0: ?"Q";
+200 poke 646, 14
+210 ?"un pallino nero corrisponde ad una"
+220 ?" cifra inserita nella posizione giusta"
+230 ?""
+240 poke 646, 1: ?"Q";
+250 poke 646, 14
+260 ?"un pallino bianco corrisponde ad una"
+270 ?" cifra giusta inserita nella posizione"
+280 ?" sbagliata"
+290 ?""
+300 poke 646, 0: ?"Q";
+310 poke 646, 14
+320 ?"nessun pallino corrisponde ad una cifra sbagliata"
