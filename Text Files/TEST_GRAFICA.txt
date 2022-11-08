@@ -5,14 +5,14 @@
 
 100 rem ***** inizio *****
 105 ? chr$(147)
-110 for i=1 to 9 : print : next i
+110 for i=1 to 9 : ? : next i
 120 poke 646, 1
 125 ?tab(13);"**************"
 130 ?tab(13);"*            *"
 135 ?tab(13);"* mastermind *"
 140 ?tab(13);"*            *"
 145 ?tab(13);"**************"
-150 for i=1 to 6 : print : next i
+150 for i=1 to 6 : ? : next i
 155 poke 646, 14
 160 ?tab(4); "premere un tasto per continuare"
 170 get a$ : if a$="" then 170
@@ -81,6 +81,35 @@
 525 goto 300
 
 600 rem ***** regole *****
+605 ?chr$(147)
+610 poke 646, 1
+615 ?tab(9);"####################"
+620 ?tab(9);"# istruzioni gioco #"
+625 ?tab(9);"####################"
+630 poke 646, 14
+
+640 ?:?:?;" ############# obiettivo: #############"
+645 poke 646, 0: ?"Q";
+650 poke 646, 14
+655 ?"indovinare il codice segreto"
+
+670 ?:?" ########## cose da sapere: ###########"
+675 poke 646, 1: ?"Q";
+680 poke 646, 14
+690 ?"hai 9 tentativi"
+695 ?:poke 646, 0: ?"Q";
+700 poke 646, 14
+705 ?"un pallino nero corrisponde ad una"
+710 ?" cifra inserita nella posizione giusta"
+715 ?:poke 646, 1: ?"Q";
+720 poke 646, 14
+725 ?"un pallino bianco corrisponde ad una"
+730 ?" cifra giusta inserita nella posizione"
+735 ?" sbagliata"
+740 ?:poke 646, 0: ?"Q";
+745 poke 646, 14
+750 ?"nessun pallino corrisponde ad una cifra sbagliata"
+760 rem aggiungere goto menu
 
 900 rem ***** gioco *****
 
