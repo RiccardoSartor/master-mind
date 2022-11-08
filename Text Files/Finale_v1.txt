@@ -10,12 +10,17 @@
 100 rem ***** inizio *****
 105 ? chr$(147)
 110 for i=1 to 9 : ? : next i
-120 poke 646, 1
+120 poke 646, 13
 125 ?tab(13);"**************"
 130 ?tab(13);"*            *"
-135 ?tab(13);"* mastermind *"
+135 ?tab(13);"* ";
+136 poke 646, 3
+137 ?"mastermind ";
+138 poke 646, 13
+139 ?"*"
 140 ?tab(13);"*            *"
 145 ?tab(13);"**************"
+146 poke 646, 14
 150 for i=1 to 6 : ? : next i
 155 poke 646, 14
 160 ?tab(4); "premere un tasto per continuare"
