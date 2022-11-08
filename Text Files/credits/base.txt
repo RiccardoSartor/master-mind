@@ -1,0 +1,29 @@
+10 ?
+20 poke 53280, 14: poke 53281, 6
+30 poke 646, 14
+40 ?tab(14);"***********"
+50 ?tab(14);"*";
+60 poke 646, 14
+70 ?" credits ";
+80 poke 646, 14
+90 ?"*"
+100 ?tab(14);"***********"
+110 poke 646, 14
+120 ?
+130 ?
+140 ?
+150 ?tab(16)"scuola:"
+160 ?
+170 ?tab(11)"iis einaudiscarpa" 
+180 ?tab(9)"montebelluna, treviso"
+190 ?
+200 ?
+210 ?
+220 ?tab(15)"studenti:"
+230 ?
+240 ?tab(11)"favero  francesco"
+250 ?tab(9)"michieletto francesco"
+260 ?tab(12)"sartor riccardo"
+270 ?
+280 ?
+290 ?
