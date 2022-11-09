@@ -18,9 +18,8 @@
 940 c(i)=int(rnd(1)*max)+min
 950 nc = nc*10 + c(i) : rem Creazione numero generato per facilitare stampa
 960 next i
-970 ?"numero casuale: ";nc : rem stampa codice generato
-
-
+970 rem ?"numero casuale: "; 
+980 rem ?nc
 
 1000 rem ***** preparazione bordi *****
 1010 b1$=chr$(155)+"UCCC"+chr$(178)+"CCCCCC"+chr$(178)+"CCCCCCI"
@@ -52,6 +51,7 @@
 1220 for i=1 to t : rem primo ciclo di tutti i tentativi
 1225 ?chr$(145);"                 ":rem cancellaconferma
 1227 poke 646, 14
+1228 ?chr$(19);"numero:";nc
 1230 ?chr$(19):?:?:?" tentativo n.";i
 1235 ?:?" inserisci il tuo"
 1240 ?" codice:";cls$;
@@ -61,58 +61,59 @@
 1260 next j
 1270 in=((pin(1)*10+pin(2))*10+pin(3))*10+pin(4)
 1280 ?:?" confermi? (s/n):"
-1290 get c$ : if c$="" then 1290
-1300 if c$="n" then 1225
+1290 get w$ : if w$="" then 1290
+1300 if w$="n" then 1225
 1310 ?chr$(145);"                 ":rem cancellaconferma
 
 1320 ?s$;tab(21);i;chr$(155);"B";chr$(154);in;chr$(155);"B ";
 1330 s$=s$+chr$(17)+chr$(17)
 
 1400 rem ***** controlli *****
-1410 rem ***** preparazione controlli *****
 1415 v=0
-1420 for j=1 to l : rem *****azzeramento vettore di controllo*****
-1425 nu(j)=-1
+1420 for j=1 to l : rem ***** azzeramento v di controllo *****
+1425 n(j)=-1
 1430 next j
 1435 cnu=1
 
-1450 rem ***** primo ciclo for che scorre il numero generato random*****
-1460 for j=1 to l : rem ricordarsi il next FATTO
+1450 rem ***** controllo pallini neri *****
+1460 for j=1 to l 
+1470 if c(j)=pin(j) goto 1500
+1480 goto 1540
+1490 poke 646, 0 : print "Q";
+1500 poke 646, 14
+1510 v=v+1
+1520 n(cnu)=pin(k)
+1530 cnu=cnu+1
+1540 next j
 
-1470 rem ***** secondo ciclo for che scorre il numero da input*****
-1480 for k=1 to l : rem ricordarsi il next FATTO
-1490 cd=0 : rem controllo doppi
+1550 rem ***** controllo pallini bianchi *****
+1560 rem ***** 1o ciclo for *****
+1570 for j=1 to l : rem ricorda de serare mona 
 
-1500 rem ***** terzo ciclo for controllo numeri gia usciti in input 
-1510 for z=1 to cnu
-1520 if pin(k)=nu(z) then cd=1
-1530 next z
+1580 rem ***** 2o ciclo for *****
+1590 for k=1 to l : rem ricorda de serare mona
+1600 cd=0 : rem controllo doppi
 
-1550 rem ***** confronto posizione e valore tra random e input *****
-1560 if c(j)=pin(k) and j=k then goto 1580
-1570 goto 1650  
-1580 poke 646, 0 : ?"Q";
-1590 poke 646, 14
-1600 v=v+1
-1610 nu(cnu)=pin(k)
-1620 cnu=cnu+1
+1610 rem ***** 3o ciclo for controllo numeri gia usciti
+1620 for z=1 to cnu
+1630 if pin(k)=n(z) then cd=1
+1640 next z
 
-1650 rem ***** inizio controllo solo valore tra random e input *****
+1650 rem ***** controllo solo tra valori *****
 1660 if cd=0 then goto 1680
-1670 goto 1740
+1670 goto 1750
 1680 if c(j)=pin(k) and j<>k then goto 1700
-1690 goto 1740
+1690 goto 1750
 1700 poke 646, 1 : ?"Q";
 1710 poke 646, 14
-1720 nu(cnu)=pin(k)
+1720 n(cnu)=pin(k)
 1730 cnu=cnu+1
 
-1740 rem *****fine confronti di ogni tipo*****
 1750 next k : rem for 1480
 1760 next j
 
 1800 rem *****controllo vittoria*****
-1810 if v=4 then goto 1830 : rem METTERE 7
+1810 if v=4 then goto 1830 
 1820 goto 1850
 1830 ? "-->hai vinto"
 1840 i=11
@@ -120,5 +121,7 @@
 1850 rem *****controllo perdita*****
 1860 ? " "
 1870 if i=9 and v<>4 then ? "hai perso" 
+
+1890 ?"Numero era:";nc
 
 2000 next i
