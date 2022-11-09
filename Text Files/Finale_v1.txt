@@ -169,8 +169,6 @@
 1220 get a$ : if a$="" then 1220
 1230 next i
 
-1600 rem ***** primo ciclo for che fa tutti i tentativi ***** 
-1601 for i=1 to t 
-1602 next i
+
 
 10000 rem ***** esci *****

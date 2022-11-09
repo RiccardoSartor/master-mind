@@ -8,6 +8,20 @@
 
 905 ?chr$(147)
 
+
+14 nc=0
+
+900 rem ***** gioco *****
+910 rem ***** generazione codice casuale *****
+920 x = rnd(-ti) : rem inizializzazione random
+930 for i=1 to l
+940 c(i)=int(rnd(1)*max)+min
+950 nc = nc*10 + c(i) : rem Creazione numero generato per facilitare stampa
+960 next i
+970 ?chr$(147);"numero casuale: ";nc : rem stampa codice generato
+
+
+
 1000 rem ***** preparazione bordi *****
 1010 b1$=chr$(155)+"UCCC"+chr$(178)+"CCCCCC"+chr$(178)+"CCCCCCI"
 1020 b2$=chr$(155)+chr$(171)+"CCC"+chr$(123)
@@ -29,6 +43,7 @@
 1180 next i
 1190 ?tab(20);b3$
 
+
 1200 rem ***** inizio input *****
 1205 poke 646, 14
 1210 cls$="        "+chr$(157)+chr$(157)+chr$(157)+chr$(157)
@@ -36,7 +51,7 @@
 1215 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)
 1220 for i=1 to t : rem primo ciclo di tutti i tentativi
 1225 ?chr$(145);"                 ":rem cancellaconferma
-1230 ?chr$(19):?:?:?" tentativo n.";i
+1230 rem ?chr$(19):?:?:?" tentativo n.";i
 1235 ?:?" inserisci il tuo"
 1240 ?" codice:";cls$;
 1245 for j=1 to l
@@ -57,7 +72,7 @@
 1435 cnu=1
 
 1450 rem ***** primo ciclo for che scorre il numero generato random*****
-1460 for j=1 to l : rem ricordarsi il next 
+1460 for j=1 to l : rem ricordarsi il next FATTO
 
 1470 rem ***** secondo ciclo for che scorre il numero da input*****
 1480 for k=1 to l : rem ricordarsi il next FATTO
@@ -78,9 +93,9 @@
 1620 cnu=cnu+1
 
 1650 rem ***** inizio controllo solo valore tra random e input *****
-1660 if cd=0 goto 1680
-1670 goto  1740
-1680 if c(j)=pin(k) and j<>k goto 1700
+1660 if cd=0 then goto 1680
+1670 goto 1740
+1680 if c(j)=pin(k) and j<>k then goto 1700
 1690 goto 1740
 1700 poke 646, 1 : print "Q";
 1710 poke 646, 14
@@ -92,7 +107,7 @@
 1760 next j
 
 1800 rem *****controllo vittoria*****
-1810 if v=4 goto 1830 : rem METTERE 7
+1810 if v=4 then goto 1830 : rem METTERE 7
 1820 goto 1850
 1830 print "-->hai vinto"
 1840 i=11
