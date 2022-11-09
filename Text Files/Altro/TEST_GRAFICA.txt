@@ -69,17 +69,16 @@
 1260 next j
 1270 in=((pin(1)*10+pin(2))*10+pin(3))*10+pin(4)
 1280 ?:?" confermi? (s/n):"
-1290 get w$ : if w$="" then 1290
+1290 get w$ : if (w$<>"s" and w$<>"n") then 1290
 1300 if w$="n" then 1225
-1310 ?chr$(145);"                 ":rem cancellaconferma
+1310 ?chr$(145);"ciao             ":rem cancellaconferma
 
 1320 ?s$;tab(21);i;chr$(155);"B";chr$(154);in;chr$(155);"B ";
 1330 s$=s$+chr$(17)+chr$(17)
 
 1400 rem ***** controlli *****
-
 1410 rem ***** controllo neri *****
-1405 pneri=0 : pbia=0
+1415 pneri=0 : pbia=0
 1420 for j=1 to l : boolneri(j)=0 : next j : rem iniz
 1430 for j=1 to l 
 1440 if c(j) = pin(j) then 1460
@@ -113,7 +112,7 @@
 1680 pbia = pbia + 1
 1690 next j
 
-1700 if pneri=0 then 1720 
+1700 if pneri=0 then 1715
 1710 goto 1800
 1715 if dvu=1 then 1800
 1720 for j=1 to dvu-1
