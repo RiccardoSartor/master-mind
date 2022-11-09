@@ -139,9 +139,8 @@
 920 x = rnd(-ti) : rem inizializzazione random
 930 for i=1 to l
 940 c(i)=int(rnd(1)*max)+min
-950 nc = nc*10+c(i) : rem Creazione del numero generato per facilitare la stampa
+950 nc = nc*10+c(i) : rem numero generato per facilitare stampa
 960 next i
-970 rem ?"numero casuale: "; nc : rem stampa codice generato
 
 1000 rem ***** preparazione bordi *****
 1010 b1$=chr$(155)+"UCCC"+chr$(178)+"CCCCCC"+chr$(178)+"CCCCCCI"
