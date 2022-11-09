@@ -1,0 +1,91 @@
+10 t=9
+11 max=6
+12 min=1
+13 l=4
+20 rem --- generazione mero casuale---
+21 x = rnd(-ti) : rem inizializzazione random
+30 for i=1 to l
+40 c(i)=it(rnd(1)*max)+min
+50 nc = nc*10+c(i) : rem Creazione del numero generato per facilitare la stampa
+60 next i
+61 print "mastermind"
+65 rem ---print "numero casuale: "; nc : rem stampa numero generato---
+
+66 rem ---primo ciclo for che fa tutti i tentativi---
+70 for i=1 to t 
+75 rem ---imput---
+76 print "tentativo n."; i
+80 input "inserisci un numero: "; in 
+85 rem --- creazione vettore partendo da input---
+90 for j=l to 1 step -1
+100 pin(j) = in - int(in/10)*10
+110 in =int(in/10)
+120 next j
+
+121 rem --- stampa numero dato in imput come vettore---
+122 for j=1 to l
+123 print pin(j);
+124 next j
+
+129 rem --- preparazione controlli---
+130 v=0
+140 for j=1 to l : rem ---azzeramento vettore di controllo---
+150 n(j)=-1
+160 next j
+170 cnu=1
+
+175 rem ---controllo pallini neri---
+180 for j=1 to l 
+190 if c(j)=pin(j) goto 210
+200 goto 270 
+210 poke 646, 0 : print "Q";
+220 poke 646, 14
+240 v=v+1
+250 n(cnu)=pin(k)
+260 cnu=cnu+1
+270 next j
+
+275 rem --- controllo pallini bianchi---
+276 rem --- primo ciclo for---
+280 for j=1 to l : rem ricorda de serare mona 
+
+285 rem --- secondo ciclo for---
+290 for k=1 to l : rem ricorda de serare mona
+291 cd=0 : rem controllo doppi
+
+295 rem ---inizio terzo ciclo for controllo numeri gia usciti in imput
+300 for z=1 to cnu
+310 if pin(k)=n(z) then cd=1
+330 next z
+
+335 rem ---controllo solo tra valori---
+340 if cd=0 goto 360
+350 goto 420 
+360 if c(j)=pin(k) and j<>k goto 380
+370 goto 420
+380 poke 646, 1 : print "Q";
+390 poke 646, 14
+400 n(cnu)=pin(k)
+410 cnu=cnu+1
+
+420 next k
+430 next j
+
+435 rem --- controllo vittoria----
+440 if v=4 goto 460
+450 goto 480
+460 print "-->hai vinto"
+470 i=11
+
+485 rem---controllo perdita---
+480 if  i=9 and v<>4 then print "hai perso"
+490 next i
+
+
+
+
+
+
+
+
+
