@@ -12,10 +12,11 @@
 14 nc=0
 
 900 rem ***** gioco *****
+
 910 rem ***** generazione codice casuale *****
 920 x = rnd(-ti) : rem inizializzazione random
 930 for i=1 to l
-940 c(i)=int(rnd(1)*max)+min
+940 c(i) = int(rnd(1)*max)+min
 950 nc = nc*10 + c(i) : rem Creazione numero generato per facilitare stampa
 960 next i
 970 rem ?"numero casuale: "; 
@@ -45,9 +46,13 @@
 
 1200 rem ***** inizio input *****
 1205 poke 646, 14
+
+--- spostare all'inizio
 1210 cls$="        "+chr$(157)+chr$(157)+chr$(157)+chr$(157)
 1211 cls$=cls$+chr$(157)+chr$(157)+chr$(157)+chr$(157)
 1215 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)+chr$(17)+chr$(17)+chr$(17)
+---
+
 1220 for i=1 to t : rem primo ciclo di tutti i tentativi
 1225 ?chr$(145);"                 ":rem cancellaconferma
 1227 poke 646, 14
