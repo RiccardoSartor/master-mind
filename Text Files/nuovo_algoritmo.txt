@@ -15,8 +15,8 @@
 1200 for i=1 to t
 
 1400 rem ***** controlli *****
-1405 pneri=0 : pbia=0
 1410 rem ***** controllo neri *****
+1415 pneri=0 : pbia=0
 1420 for j=1 to l : boolneri(j)=0 : next j : rem iniz
 1430 for j=1 to l 
 1440 if c(j) = pin(j) then 1460
@@ -33,8 +33,7 @@
 1540 if ((pin(j)=c(k)) and (boolneri(j)=0) and (boolneri(k)=0)) then 1560
 1550 goto 1650
 1560 flag=0
-1575 if dvu=1 then 1600
-1570 for x=1 to dvu
+1570 for x=1 to dvu-1
 1580 if vcu(x)=pin(j) then 1585
 1582 goto 1590
 1585 flag=flag+1
@@ -46,10 +45,17 @@
 1650 next k  
 1660 next j
 
+1665 if dvu=1 then goto 1700
+1670 for j=1 to dvu-1
+1680 pbia = pbia + 1
+1690 next j
+
+1695 vcu(1)=0
+
 1700 if pneri=0 then 1715
 1710 goto 1800
 1715 if dvu=1 then 1800
-1720 for j=1 to dvu
+1720 for j=1 to dvu-1
 1725 cv1 = 0
 1735 for k=1 to l
 1740 if vcu(j)=c(k) then cv1 = cv1 + 1
@@ -60,13 +66,12 @@
 1765 next k
 1770 if (cv1=2 and cv2 = 2) then 1780
 1775 goto 1790
-1780 vcu(dvu) = vcu(j) : dvu = dvu+1 : rem pbia = pbia + 1
+1780 vcu(dvu) = vcu(j) : dvu = dvu+1 : pbia = pbia + 1
 1790 next j
 
-1795 if dvu=1 then 1840
-1800 rem if pbia=0 then goto 1840
-1810 for j=1 to dvu : rem pbia
-1820 ?"b"; 
+1800 if pbia=0 then goto 1840
+1810 for j=1 to pbia
+1820 ?"b";
 1830 next j
 1840 rem
 
