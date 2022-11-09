@@ -84,7 +84,7 @@
 1440 if c(j) = pin(j) then 1460
 1450 goto 1480
 1460 boolneri(j)=1
-1470 ?"n";
+1470 ?chr$(144)"Q";
 1475 pneri=pneri+1
 1480 next j
 
@@ -133,7 +133,7 @@
 
 1800 if pbia=0 then goto 1840
 1810 for j=1 to pbia
-1820 ?"b";
+1820 ?chr$(5)"Q";
 1830 next j
 1840 rem
 
