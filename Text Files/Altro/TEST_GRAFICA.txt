@@ -137,6 +137,15 @@
 1830 next j
 1840 rem
 
-1890 rem ?"numero era:";nc
+1900 if pneri=4 then i=10
 
 2000 next i
+
+2050 for i=1 to 30 : ? : next i
+2055 ?chr$(147)
+2060 if pneri=4 then 2100 :rem hai vinto
+2070 goto 2200 :rem hai perso
+
+2100 ?"hai vinto!!!!!!"
+
+2200 ?"hai perso :("

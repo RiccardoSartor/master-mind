@@ -162,13 +162,104 @@
 1190 ?tab(20);b3$
 
 1200 rem ***** inizio input *****
-1201 poke 646, 14
-1205 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)
-1210 for i=1 to t
-1215 ?s$;" tentativo n.";i
-1220 get a$ : if a$="" then 1220
-1230 next i
+1205 poke 646, 14
+
+1207 rem spostare all'inizio
+1210 cls$="        "+chr$(157)+chr$(157)+chr$(157)+chr$(157)
+1211 cls$=cls$+chr$(157)+chr$(157)+chr$(157)+chr$(157)
+1215 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)+chr$(17)+chr$(17)+chr$(17)
 
 
+1220 for i=1 to t : rem primo ciclo di tutti i tentativi
+1225 rem ?chr$(145);"                 ":rem cancellaconferma
+1227 poke 646, 14
+1228 ?chr$(19);"numero:";nc
+1230 ?chr$(19):?:?:?" tentativo n.";i
+1235 ?:?" inserisci il tuo"
+1240 ?" codice:";cls$;
+1245 for j=1 to l
+1250 get pin(j) : if pin(j)=0 then 1250
+1255 ?pin(j);chr$(157);
+1260 next j
+1270 in=((pin(1)*10+pin(2))*10+pin(3))*10+pin(4)
+1280 ?:?" confermi? (s/n):"
+1290 get w$ : if (w$<>"s" and w$<>"n") then 1290
+1300 ?chr$(145);"                 ":rem cancellaconferma
+1310 if w$="n" then 1225
 
-10000 rem ***** esci *****
+1320 ?s$;tab(21);i;chr$(155);"B";chr$(154);in;chr$(155);"B ";
+1330 s$=s$+chr$(17)+chr$(17)
+
+1400 rem ***** controlli *****
+1410 rem ***** controllo neri *****
+1415 pneri=0 : pbia=0
+1420 for j=1 to l : boolneri(j)=0 : next j : rem iniz
+1430 for j=1 to l 
+1440 if c(j) = pin(j) then 1460
+1450 goto 1480
+1460 boolneri(j)=1
+1470 ?chr$(144)"Q";
+1475 pneri=pneri+1
+1480 next j
+
+1500 rem ***** controllo bianchi *****
+1510 dvu = 1 : rem dimensione vettore univoci
+1520 for j=1 to l
+1530 for k=1 to l
+1540 if ((pin(j)=c(k)) and (boolneri(j)=0) and (boolneri(k)=0)) then 1560
+1550 goto 1650
+1560 flag=0
+1570 for x=1 to dvu-1
+1580 if vcu(x)=pin(j) then 1585
+1582 goto 1590
+1585 flag=flag+1
+1590 next x
+1600 if flag=0 then 1620
+1610 goto 1650 
+1620 vcu(dvu)=pin(j) 
+1630 dvu=dvu+1
+1650 next k  
+1660 next j
+
+1665 if dvu=1 then goto 1700
+1670 for j=1 to dvu-1
+1680 pbia = pbia + 1
+1690 next j
+
+1695 vcu(1)=0
+
+1700 if pneri=0 then 1715
+1710 goto 1800
+1715 if dvu=1 then 1800
+1720 for j=1 to dvu-1
+1725 cv1 = 0
+1735 for k=1 to l
+1740 if vcu(j)=c(k) then cv1 = cv1 + 1
+1745 next k
+1750 cv2 = 0
+1755 for k=1 to l
+1760 if vcu(j)=pin(k) then cv2 = cv2 + 1
+1765 next k
+1770 if (cv1=2 and cv2 = 2) then 1780
+1775 goto 1790
+1780 vcu(dvu) = vcu(j) : dvu = dvu+1 : pbia = pbia + 1
+1790 next j
+
+1800 if pbia=0 then goto 1840
+1810 for j=1 to pbia
+1820 ?chr$(5)"Q";
+1830 next j
+1840 rem
+
+1900 if pneri=4 then i=10
+
+2000 next i
+
+2050 for i=1 to 30 : ? : next i
+2055 ?chr$(147)
+2060 if pneri=4 then 2100 :rem hai vinto
+2070 goto 2200 :rem hai perso
+
+2100 ?"hai vinto!!!!!!"
+
+2200 ?"hai perso :("
