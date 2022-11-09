@@ -57,7 +57,7 @@
 
 
 1220 for i=1 to t : rem primo ciclo di tutti i tentativi
-1225 ?chr$(145);"                 ":rem cancellaconferma
+1225 rem ?chr$(145);"                 ":rem cancellaconferma
 1227 poke 646, 14
 1228 ?chr$(19);"numero:";nc
 1230 ?chr$(19):?:?:?" tentativo n.";i
@@ -70,8 +70,8 @@
 1270 in=((pin(1)*10+pin(2))*10+pin(3))*10+pin(4)
 1280 ?:?" confermi? (s/n):"
 1290 get w$ : if (w$<>"s" and w$<>"n") then 1290
-1300 if w$="n" then 1225
-1310 ?chr$(145);"ciao             ":rem cancellaconferma
+1300 ?chr$(145);"                 ":rem cancellaconferma
+1310 if w$="n" then 1225
 
 1320 ?s$;tab(21);i;chr$(155);"B";chr$(154);in;chr$(155);"B ";
 1330 s$=s$+chr$(17)+chr$(17)
@@ -111,6 +111,8 @@
 1670 for j=1 to dvu-1
 1680 pbia = pbia + 1
 1690 next j
+
+1695 vcu(1)=0
 
 1700 if pneri=0 then 1715
 1710 goto 1800
