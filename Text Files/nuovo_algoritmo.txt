@@ -4,9 +4,10 @@
 12 t = 9
 13 l = 4
 14 vcu(1)=0
-15 c(1) = 1 : c(2) = 4 : c(3) = 1 : c(4) = 4
-16 pin(1) = 4 : pin(2) = 2 : pin(3) = 4 : pin(4) = 1
-17 numneri=0
+15 pneri=0
+16 pbia=0
+18 c(1) = 1 : c(2) = 4 : c(3) = 1 : c(4) = 4
+19 pin(1) = 1 : pin(2) = 4 : pin(3) = 1 : pin(4) = 4
 
 50 poke 53281, 11 : rem sfondo
 51 poke 53280, 12 : rem bordi esterni schermo
@@ -14,7 +15,7 @@
 1200 for i=1 to t
 
 1400 rem ***** controlli *****
-
+1405 pneri=0 : pbia=0
 1410 rem ***** controllo neri *****
 1420 for j=1 to l : boolneri(j)=0 : next j : rem iniz
 1430 for j=1 to l 
@@ -22,7 +23,7 @@
 1450 goto 1480
 1460 boolneri(j)=1
 1470 ?"n";
-1475 numneri=numneri+1
+1475 pneri=pneri+1
 1480 next j
 
 1500 rem ***** controllo bianchi *****
@@ -44,10 +45,16 @@
 1650 next k  
 1660 next j
 
-1700 if numneri=0 then 1720
+1665 if dvu=1 then goto 1700
+1670 for j=1 to dvu-1
+1680 pbia = pbia + 1
+1690 next j
+
+1700 if pneri=0 then 1720 
 1710 goto 1800
+1715 if dvu=1 then 1800
 1720 for j=1 to dvu-1
-1725 cv1 = 0
+1725 cv1 = 0 : ?"entrato if"
 1735 for k=1 to l
 1740 if vcu(j)=c(k) then cv1 = cv1 + 1
 1745 next k
@@ -57,16 +64,18 @@
 1765 next k
 1770 if (cv1=2 and cv2 = 2) then 1780
 1775 goto 1790
-1780 vcu(dvu) = vcu(j) : dvu = dvu+1
+1780 vcu(dvu) = vcu(j) : dvu = dvu+1 : pbia = pbia + 1
 1790 next j
 
-1800 dvu = dvu-1
-1810 for j=1 to dvu
+1800 if pbia=0 then goto 1840
+1810 for j=1 to pbia
 1820 ?"b";
 1830 next j
+1840 rem
+
 
 1900 i=10
 
 10000 next i
 
-11000 rem non toccare funzionante 9-11-2022 22-43
+11000 rem non toccare funzionante 9-11-2022 23.15
