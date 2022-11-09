@@ -34,7 +34,7 @@
 1210 cls$="        "+chr$(157)+chr$(157)+chr$(157)+chr$(157)
 1211 cls$=cls$+chr$(157)+chr$(157)+chr$(157)+chr$(157)
 1215 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)
-1220 for i=1 to t
+1220 for i=1 to t : rem primo ciclo di tutti i tentativi
 1225 ?chr$(145);"                 ":rem cancellaconferma
 1230 ?chr$(19):?:?:?" tentativo n.";i
 1235 ?:?" inserisci il tuo"
@@ -48,7 +48,57 @@
 1290 get c$ : if c$="" then 1290
 1300 if c$="n" then 1225
 
+1400 rem ***** controlli *****
+1410 rem ***** preparazione controlli *****
+1415 v=0
+1420 for j=1 to l : rem *****azzeramento vettore di controllo*****
+1425 nu(j)=-1
+1430 next j
+1435 cnu=1
 
+1450 rem ***** primo ciclo for che scorre il numero generato random*****
+1460 for j=1 to l : rem ricordarsi il next 
 
+1470 rem ***** secondo ciclo for che scorre il numero da input*****
+1480 for k=1 to l : rem ricordarsi il next FATTO
+1490 cd=0 : rem controllo doppi
+
+1500 rem ***** terzo ciclo for controllo numeri gia usciti in input 
+1510 for z=1 to cnu
+1520 if pin(k)=nu(z) then cd=1
+1530 next z
+
+1550 rem ***** confronto posizione e valore tra random e input *****
+1560 if c(j)=pin(k) and j=k then goto 1580
+1570 goto 1650  
+1580 poke 646, 0 : print "Q";
+1590 poke 646, 14
+1600 v=v+1
+1610 nu(cnu)=pin(k)
+1620 cnu=cnu+1
+
+1650 rem ***** inizio controllo solo valore tra random e input *****
+1660 if cd=0 goto 1680
+1670 goto  1740
+1680 if c(j)=pin(k) and j<>k goto 1700
+1690 goto 1740
+1700 poke 646, 1 : print "Q";
+1710 poke 646, 14
+1720 nu(cnu)=pin(k)
+1730 cnu=cnu+1
+
+1740 rem *****fine confronti di ogni tipo*****
+1750 next k : rem for 1480
+1760 next j
+
+1800 rem *****controllo vittoria*****
+1810 if v=4 goto 1830 : rem METTERE 7
+1820 goto 1850
+1830 print "-->hai vinto"
+1840 i=11
+
+1850 rem *****controllo perdita*****
+1860 print " "
+1870 if i=9 and v<>4 then print "hai perso" 
 
 2000 next i
