@@ -18,7 +18,7 @@
 940 c(i)=int(rnd(1)*max)+min
 950 nc = nc*10 + c(i) : rem Creazione numero generato per facilitare stampa
 960 next i
-970 ?chr$(147);"numero casuale: ";nc : rem stampa codice generato
+970 ?"numero casuale: ";nc : rem stampa codice generato
 
 
 
@@ -48,10 +48,11 @@
 1205 poke 646, 14
 1210 cls$="        "+chr$(157)+chr$(157)+chr$(157)+chr$(157)
 1211 cls$=cls$+chr$(157)+chr$(157)+chr$(157)+chr$(157)
-1215 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)
+1215 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)+chr$(17)+chr$(17)+chr$(17)
 1220 for i=1 to t : rem primo ciclo di tutti i tentativi
 1225 ?chr$(145);"                 ":rem cancellaconferma
-1230 rem ?chr$(19):?:?:?" tentativo n.";i
+1227 poke 646, 14
+1230 ?chr$(19):?:?:?" tentativo n.";i
 1235 ?:?" inserisci il tuo"
 1240 ?" codice:";cls$;
 1245 for j=1 to l
@@ -62,6 +63,10 @@
 1280 ?:?" confermi? (s/n):"
 1290 get c$ : if c$="" then 1290
 1300 if c$="n" then 1225
+1310 ?chr$(145);"                 ":rem cancellaconferma
+
+1320 ?s$;tab(21);i;chr$(155);"B";chr$(154);in;chr$(155);"B ";
+1330 s$=s$+chr$(17)+chr$(17)
 
 1400 rem ***** controlli *****
 1410 rem ***** preparazione controlli *****
@@ -86,7 +91,7 @@
 1550 rem ***** confronto posizione e valore tra random e input *****
 1560 if c(j)=pin(k) and j=k then goto 1580
 1570 goto 1650  
-1580 poke 646, 0 : print "Q";
+1580 poke 646, 0 : ?"Q";
 1590 poke 646, 14
 1600 v=v+1
 1610 nu(cnu)=pin(k)
@@ -97,7 +102,7 @@
 1670 goto 1740
 1680 if c(j)=pin(k) and j<>k then goto 1700
 1690 goto 1740
-1700 poke 646, 1 : print "Q";
+1700 poke 646, 1 : ?"Q";
 1710 poke 646, 14
 1720 nu(cnu)=pin(k)
 1730 cnu=cnu+1
@@ -109,11 +114,11 @@
 1800 rem *****controllo vittoria*****
 1810 if v=4 then goto 1830 : rem METTERE 7
 1820 goto 1850
-1830 print "-->hai vinto"
+1830 ? "-->hai vinto"
 1840 i=11
 
 1850 rem *****controllo perdita*****
-1860 print " "
-1870 if i=9 and v<>4 then print "hai perso" 
+1860 ? " "
+1870 if i=9 and v<>4 then ? "hai perso" 
 
 2000 next i
