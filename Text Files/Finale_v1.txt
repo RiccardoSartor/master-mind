@@ -183,7 +183,7 @@
 1220 for i=1 to t : rem primo ciclo di tutti i tentativi
 1225 rem ?chr$(145);"                 ":rem cancellaconferma
 1227 poke 646, 14
-1228 ?chr$(19);"numero:";nc
+1228 rem ?chr$(19);"numero:";nc : rem stampa numero per test
 1230 ?chr$(19):?:?:?" tentativo n.";i
 1235 ?:?" inserisci il tuo"
 1240 ?" codice:";cls$;
@@ -307,10 +307,10 @@
 3070 poke 646, 13:?"*"
 3080 ?tab(14);"***********"
 3090 poke 646, 14:?:?
-3100 ?tab(16)"scuola:":?
+3100 ?tab(16)chr$(159)"scuola:":?
 3110 ?tab(11)"iis einaudiscarpa" 
 3120 ?tab(9)"montebelluna, treviso":?:?:?
-3130 ?tab(15)"studenti:":?
+3130 ?tab(15)chr$(159)"studenti:":?
 3140 ?tab(11)"favero  francesco"
 3150 ?tab(9)"michieletto francesco"
 3160 ?tab(12)"sartor riccardo":?:?:?:?
