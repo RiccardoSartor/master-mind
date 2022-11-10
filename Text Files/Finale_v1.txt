@@ -113,12 +113,12 @@
 655 ?tab(10);"********************"
 660 poke 646, 14
 
-665 ?:?;" ************* obiettivo: *************"
+665 ?:?;chr$(159)"               obiettivo:              "
 670 poke 646, 0: ?" Q";
 675 poke 646, 14
 680 ?"indovinare il codice segreto"
 
-685 ?:?" ********** cose da sapere: ***********"
+685 ?:?chr$(159)"            cose da sapere:            "
 690 poke 646, 1: ?" Q";
 695 poke 646, 14
 700 ?"hai";t;"tentativi"
@@ -145,6 +145,7 @@
 920 x = rnd(-ti) : rem inizializzazione random
 930 for i=1 to l
 940 cas(i)=int(rnd(1)*max)+min
+945 if not(cas(i)>=min and cas(i)<=max) then 940
 950 nc = nc*10+cas(i) : rem numero generato per facilitare stampa
 960 next i
 
@@ -177,6 +178,7 @@
 1211 cls$=cls$+chr$(157)+chr$(157)+chr$(157)+chr$(157)
 1215 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)+chr$(17)+chr$(17)+chr$(17)
 
+1219 nc = ((cas(1)*10+cas(2))*10+cas(3))*10+cas(4)
 
 1220 for i=1 to t : rem primo ciclo di tutti i tentativi
 1225 rem ?chr$(145);"                 ":rem cancellaconferma
