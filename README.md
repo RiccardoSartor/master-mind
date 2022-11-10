@@ -18,6 +18,7 @@
 ## simboli utili 
 
 dal sito https://www.c64-wiki.com/wiki/control_character 
+dal sito https://sta.c64.org/cbm64pet.html
 
 UTILIZZO --> `print chr$(codice ascii nella tabella)`
 
