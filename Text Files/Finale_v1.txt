@@ -181,14 +181,16 @@
 1235 ?:?" inserisci il tuo"
 1240 ?" codice:";cls$;
 1245 for j=1 to l
-1250 get pin(j) : if pin(j)=0 then 1250
-1255 ?pin(j);chr$(157);
-1260 next j
-1270 in=((pin(1)*10+pin(2))*10+pin(3))*10+pin(4)
-1280 ?:?" confermi? (s/n):"
-1290 get w$ : if (w$<>"s" and w$<>"n") then 1290
-1300 ?chr$(145);"                 ":rem cancellaconferma
-1310 if w$="n" then 1225
+1250 get inp$ : if inp$="" then 1250
+1255 pin(j) = val(inp$)
+1260 if not(pin(j)>=min and pin(j)<=max) then 1250
+1265 ?pin(j);chr$(157);
+1270 next j
+1280 in=((pin(1)*10+pin(2))*10+pin(3))*10+pin(4)
+1290 ?:?" confermi? (s/n):"
+1300 get w$ : if (w$<>"s" and w$<>"n") then 1300
+1310 ?chr$(145);"                 ":rem cancellaconferma
+1320 if w$="n" then 1225
 
 1320 ?s$;tab(21);i;chr$(155);"B";chr$(154);in;chr$(155);"B ";
 1330 s$=s$+chr$(17)+chr$(17)

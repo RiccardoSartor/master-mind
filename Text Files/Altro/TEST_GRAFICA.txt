@@ -22,59 +22,23 @@
 940 c(i) = int(rnd(1)*max)+min
 950 nc = nc*10 + c(i) : rem Creazione numero generato per facilitare stampa
 960 next i
-970 rem ?"numero casuale: "; 
-980 rem ?nc
-
-1000 rem ***** preparazione bordi *****
-1010 b1$=chr$(155)+"UCCC"+chr$(178)+"CCCCCC"+chr$(178)+"CCCCCCI"
-1020 b2$=chr$(155)+chr$(171)+"CCC"+chr$(123)
-1025 b2$=b2$+"CCCCCC"+chr$(123)+"CCCCCC"+chr$(179)
-1030 b3$=chr$(155)+"JCCC"+chr$(177)+"CCCCCC"+chr$(177)+"CCCCCCK"
-1040 r1$=chr$(155)+"B "+chr$(154)+"t "+chr$(155)+"B "+chr$(154)
-1045 r1$=r1$+"cod: "+chr$(155)+"B "+chr$(154)+"ris: "+chr$(155)+"B"
-1060 s0$=chr$(155)+"B   B      B      B"
-
-1100 rem ***** stampa tabella *****
-1105 ?chr$(147)
-1110 ?tab(20);b1$
-1120 ?tab(20);s0$
-1130 ?tab(20);r1$
-1140 ?tab(20);s0$
-1150 for i=1 to t
-1160 ?tab(20);b2$
-1170 ?tab(20);s0$
-1180 next i
-1190 ?tab(20);b3$
-
-
-1200 rem ***** inizio input *****
-1205 poke 646, 14
-
-1207 rem spostare all'inizio
-1210 cls$="        "+chr$(157)+chr$(157)+chr$(157)+chr$(157)
-1211 cls$=cls$+chr$(157)+chr$(157)+chr$(157)+chr$(157)
-1215 s$=chr$(19)+chr$(17)+chr$(17)+chr$(17)+chr$(17)+chr$(17)+chr$(17)
-
+970 ?"numero casuale: "; 
+980 ?nc
 
 1220 for i=1 to t : rem primo ciclo di tutti i tentativi
-1225 rem ?chr$(145);"                 ":rem cancellaconferma
-1227 poke 646, 14
-1228 ?chr$(19);"numero:";nc
-1230 ?chr$(19):?:?:?" tentativo n.";i
-1235 ?:?" inserisci il tuo"
-1240 ?" codice:";cls$;
-1245 for j=1 to l
-1250 get pin(j) : if pin(j)=0 then 1250
-1255 ?pin(j);chr$(157);
-1260 next j
-1270 in=((pin(1)*10+pin(2))*10+pin(3))*10+pin(4)
-1280 ?:?" confermi? (s/n):"
-1290 get w$ : if (w$<>"s" and w$<>"n") then 1290
-1300 ?chr$(145);"                 ":rem cancellaconferma
-1310 if w$="n" then 1225
 
-1320 ?s$;tab(21);i;chr$(155);"B";chr$(154);in;chr$(155);"B ";
-1330 s$=s$+chr$(17)+chr$(17)
+1235 ?:?" inserisci il tuo codice:";
+1245 for j=1 to l
+1250 get inp$ : if inp$="" then 1250
+1255 pin(j) = val(inp$)
+1260 if not(pin(j)>=min and pin(j)<=max) then 1250
+1265 ?pin(j);chr$(157);
+1270 next j
+1280 in=((pin(1)*10+pin(2))*10+pin(3))*10+pin(4)
+1290 ?:?" confermi? (s/n):"
+1300 get w$ : if (w$<>"s" and w$<>"n") then 1300
+1310 ?chr$(145);"                 ":rem cancellaconferma
+1320 if w$="n" then 1225
 
 1400 rem ***** controlli *****
 1410 rem ***** controllo neri *****
@@ -140,12 +104,3 @@
 1900 if pneri=4 then i=10
 
 2000 next i
-
-2050 for i=1 to 30 : ? : next i
-2055 ?chr$(147)
-2060 if pneri=4 then 2100 :rem hai vinto
-2070 goto 2200 :rem hai perso
-
-2100 ?"hai vinto!!!!!!"
-
-2200 ?"hai perso :("
