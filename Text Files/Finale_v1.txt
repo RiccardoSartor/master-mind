@@ -232,8 +232,9 @@
 
 1700 if pneri=0 then 1715
 1710 goto 1800
-1715 if dvu=1 then 1800
-1720 for j=1 to dvu-1
+1715 if dvu=1 then 180
+
+1720 for j=1 to dvu :rem rimosso -1
 1725 cv1 = 0
 1735 for k=1 to l
 1740 if vcu(j)=c(k) then cv1 = cv1 + 1
@@ -245,6 +246,7 @@
 1770 if (cv1=2 and cv2 = 2) then 1780
 1775 goto 1790
 1780 vcu(dvu) = vcu(j) : dvu = dvu+1 : pbia = pbia + 1
+1785 if dvu>4 then 1800 : rem aggiunta
 1790 next j
 
 1800 if pbia=0 then goto 1840
