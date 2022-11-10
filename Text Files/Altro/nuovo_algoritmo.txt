@@ -55,7 +55,7 @@
 1660 next j
 
 1700 de = du
-1705 if du=1 then 1815
+1705 if du=1 then 1840
 1710 for j=1 to du-1
 1720 cp=0 
 1715 cc=0
