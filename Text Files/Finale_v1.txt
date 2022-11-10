@@ -1,3 +1,5 @@
+1 rem gara 64ksr 2022 - favero, michieletto, sartor 
+2 rem 4binf iiseinaudiscarpa
 5 rem **** variabili e altro *****
 10 min = 1
 11 max = 6
