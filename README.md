@@ -1,20 +1,21 @@
 # master-mind
 
 ## TO-DO LIST
-- [ ] stampa finale bella vinto o perso, crediti
-- [ ] controllo input get numeri
+- [ ] Sistemare algoritmo
+- [ ] Opzionale Stampa statistiche di gioco
+- [ ] Opzionale Salva su file
+- [x] stampa finale bella vinto o perso, crediti
+- [x] controllo input
 - [x] Stampa iniziale regole
 - [x] Modifica impostazioni personalizzate
 - [x] Commentare tutta la stampa iniziale del numero (che deve essere segreto)
-- [ ] Grafica bella
+- [x] Grafica bella
   - [x] Tabella
   - [x] Stampa elementi nella tabella
 - [x] input con get
-- [ ] Aggiungere stampa soluzione in caso di perdita
-- [ ] Richiesta finale di rigiocare o uscire  (NUOVO: PREMERE UN TASTO PER TORNARE AL MENU' PRINCIPALE [riga 200])
-  - [ ] Stampa statistiche di gioco
-  - [ ] Opzionale Salva su file
-- [ ] Crediti
+- [x] Aggiungere stampa soluzione in caso di perdita
+- [x] Richiesta finale di rigiocare o uscire  (NUOVO: PREMERE UN TASTO PER TORNARE AL MENU' PRINCIPALE [riga 200])
+- [x] Crediti
 
 ## simboli utili 
 
