@@ -6,6 +6,8 @@
 14 vcu(1)=0
 15 pneri=0
 16 pbia=0
+17 du=0 : rem dimensione univoci
+18 de=0 : rem dimensione extra
 
 50 poke 53281, 11 : rem sfondo
 51 poke 53280, 12 : rem bordi esterni schermo
@@ -18,9 +20,7 @@
 130 ?tab(13);"*            *"
 135 ?tab(13);"* ";
 136 poke 646, 3
-137 ?"mastermind ";
-138 poke 646, 13
-139 ?"*"
+137 ?"mastermind "; : poke 646, 13 : ?"*"
 140 ?tab(13);"*            *"
 145 ?tab(13);"**************"
 146 poke 646, 14
@@ -144,8 +144,8 @@
 915 nc=0
 920 x = rnd(-ti) : rem inizializzazione random
 930 for i=1 to l
-940 c(i)=int(rnd(1)*max)+min
-950 nc = nc*10+c(i) : rem numero generato per facilitare stampa
+940 cas(i)=int(rnd(1)*max)+min
+950 nc = nc*10+cas(i) : rem numero generato per facilitare stampa
 960 next i
 
 1000 rem ***** preparazione bordi *****
@@ -201,67 +201,55 @@
 1330 s$=s$+chr$(17)+chr$(17)
 
 1400 rem ***** controlli *****
-1410 rem ***** controllo neri *****
-1415 pneri=0 : pbia=0
-1420 for j=1 to l : boolneri(j)=0 : next j : rem iniz
+1405 pneri=0 : pbia=0
+1410 for j=1 to l : boolneri(j)=0 : next j : rem iniz
+
+1420 rem ***** controllo neri *****
 1430 for j=1 to l 
-1440 if c(j) = pin(j) then 1460
-1450 goto 1480
+1440 if cas(j) = pin(j) then 1460
+1450 goto 1490
 1460 boolneri(j)=1
-1470 ?chr$(144)"Q";
-1475 pneri=pneri+1
-1480 next j
+1470 pneri=pneri+1
+1480 ?chr$(144)"Q";
+1490 next j
 
 1500 rem ***** controllo bianchi *****
-1510 dvu = 1 : rem dimensione vettore univoci
+1510 du = 1 : rem dimensione univoci
 1520 for j=1 to l
 1530 for k=1 to l
-1540 if ((pin(j)=c(k)) and (boolneri(j)=0) and (boolneri(k)=0)) then 1560
+1540 if ((pin(j)=cas(k)) and (boolneri(j)=0) and (boolneri(k)=0)) then 1560
 1550 goto 1650
 1560 flag=0
-1570 for x=1 to dvu-1
-1580 if vcu(x)=pin(j) then 1585
-1582 goto 1590
-1585 flag=flag+1
+1565 if du=1 then 1600
+1570 for x=1 to du-1
+1580 if vcu(x)=pin(j) then flag=flag+1
 1590 next x
 1600 if flag=0 then 1620
 1610 goto 1650 
-1620 vcu(dvu)=pin(j) 
-1630 dvu=dvu+1
+1620 vcu(du)=pin(j) 
+1630 du=du+1
 1650 next k  
 1660 next j
 
-1665 if dvu=1 then goto 1700
-1670 for j=1 to dvu-1
-1680 pbia = pbia + 1
-1690 next j
+1700 de = du
+1705 if du=1 then 1840
+1710 for j=1 to du-1
+1720 cp=0 
+1715 cc=0
+1730 for k=1 to l
+1740 if (vcu(j)=pin(k) and boolneri(k)=0) then cp=cp+1 : rem ?"cp=";cp
+1750 if (vcu(j)=cas(k) and boolneri(k)=0) then cc=cc+1 : rem ?"cc=";cc
+1760 next k
+1770 if (cp=2 and cc=2) then goto 1790
+1780 goto 1810
+1790 vcu(de) = vcu(j)
+1800 de=de+1
+1810 next j
 
-1695 vcu(1)=0
-
-1700 if pneri=0 then 1715
-1710 goto 1800
-1715 if dvu=1 then 1800
-
-1720 for j=1 to dvu :rem rimosso -1
-1725 cv1 = 0
-1735 for k=1 to l
-1740 if vcu(j)=c(k) then cv1 = cv1 + 1
-1745 next k
-1750 cv2 = 0
-1755 for k=1 to l
-1760 if vcu(j)=pin(k) then cv2 = cv2 + 1
-1765 next k
-1770 if (cv1=2 and cv2 = 2) then 1780
-1775 goto 1790
-1780 vcu(dvu) = vcu(j) : dvu = dvu+1 : pbia = pbia + 1
-1785 if dvu>4 then 1800 : rem aggiunta
-1790 next j
-
-1800 if pbia=0 then goto 1840
-1810 for j=1 to pbia
-1820 ?chr$(5)"Q";
-1830 next j
-1840 rem
+1840 if de=1 then 1900
+1850 for j=1 to de-1
+1860 ?chr$(5)"Q";
+1870 next j
 
 1900 if pneri=4 then i=10
 
