@@ -308,10 +308,10 @@
 3080 ?tab(14);"***********"
 3090 poke 646, 14:?:?
 3100 ?tab(16)chr$(159)"scuola:":?
-3110 ?tab(11)"iis einaudiscarpa" 
+3110 ?tab(11)chr$(154)"iis einaudiscarpa" 
 3120 ?tab(9)"montebelluna, treviso":?:?:?
 3130 ?tab(15)chr$(159)"studenti:":?
-3140 ?tab(11)"favero  francesco"
+3140 ?tab(11)chr$(154)"favero  francesco"
 3150 ?tab(9)"michieletto francesco"
 3160 ?tab(12)"sartor riccardo":?:?:?:?
 3170 ?tab(6); "premere un tasto per uscire":?
