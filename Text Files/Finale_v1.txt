@@ -46,10 +46,11 @@
 274 ?:?" 3-gioca"
 276 ?:?" 4-esci dal gioco"
 278 get a$ : if a$="" then 278
-280 if a$="1" then 300:rem goto impostazioni
-285 if a$="2" then 600:rem goto regole
-290 if a$="3" then 900:rem goto gioco
-295 if a$="4" then 3000:rem esci dal gioco
+279 opz = val(a$) : if not(opz>=1 and opz<=4) then 278
+280 if opz=1 then 300:rem goto impostazioni
+285 if opz=2 then 600:rem goto regole
+290 if opz=3 then 900:rem goto gioco
+295 if opz=4 then 3000:rem esci dal gioco
 
 300 rem ***** impostazioni *****
 305 ?chr$(147)
@@ -64,16 +65,18 @@
 347 ?:?" 3-cambia il num di tentativi (ora:";t;")"
 348 ?:?" 4-torna al menu' principale"
 360 get a$ : if a$="" then 360
-370 if a$="1" then 400:rem modifica min
-371 if a$="2" then 450:rem modifica max
-372 if a$="3" then 500:rem modifica tentativi
-373 if a$="4" then 200:rem torna al menu
+365 opz = val(a$) : if not(opz>=1 and opz<=4) then 360
+370 if opz=1 then 400:rem modifica min
+371 if opz=2 then 450:rem modifica max
+372 if opz=3 then 500:rem modifica tentativi
+373 if opz=4 then 200:rem torna al menu
 
 400 rem ***** modifica min *****
 401 ?:?" ***** modifica minimo *****"
 402 ?" valore default: 1"
 405 ?" il valore deve essere tra 1 e";max-1
-410 input" inserisci il numero";b
+410 input" inserisci numero (invio conferma):";inp$
+412 b = val(inp$)
 415 if (b<1 or b>(max-1)) then 405 : rem non corretto
 420 min = b : rem else cambia
 425 goto 300
@@ -82,7 +85,8 @@
 451 ?:?" ***** modifica massimo *****"
 452 ?" valore default: 6"
 455 ?" il valore deve essere tra";min+1;"e 9"
-460 input" inserisci il numero";b
+460 input" inserisci numero (invio conferma):";inp$
+462 b = val(inp$)
 465 if (b<min+1 or b>9) then 455 : rem non corretto
 470 max = b : rem else cambia
 475 goto 300
@@ -91,7 +95,8 @@
 501 ?:?" ***** modifica tentativi *****"
 502 ?" valore default: 9"
 505 ?" il valore deve essere tra 1 e 9"
-510 input" inserisci il numero";b
+510 input" inserisci numero (invio conferma):";inp$
+512 b = val(inp$)
 515 if (b<1 or b>9) then 505 : rem non corretto
 520 t = b : rem else cambia
 525 goto 300
