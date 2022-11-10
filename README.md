@@ -1,9 +1,7 @@
 # master-mind
 
 ## TO-DO LIST
-- [ ] Sistemare algoritmo
-- [ ] Opzionale Stampa statistiche di gioco
-- [ ] Opzionale Salva su file
+- [x] Sistemare algoritmo
 - [x] stampa finale bella vinto o perso, crediti
 - [x] controllo input
 - [x] Stampa iniziale regole
