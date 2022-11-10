@@ -77,6 +77,8 @@ int main() {
                 }
             }
         }
+
+        
         for(int j=1; j<dvu; j++){
             cout << "\n" << comuniunivoci[j-1];
             cout <<"b";

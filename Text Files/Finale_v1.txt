@@ -49,7 +49,7 @@
 280 if a$="1" then 300:rem goto impostazioni
 285 if a$="2" then 600:rem goto regole
 290 if a$="3" then 900:rem goto gioco
-295 if a$="4" then 10000:rem esci dal gioco
+295 if a$="4" then 3000:rem esci dal gioco
 
 300 rem ***** impostazioni *****
 305 ?chr$(147)
@@ -136,6 +136,7 @@
 
 900 rem ***** gioco *****
 910 rem ***** generazione codice casuale *****
+915 nc=0
 920 x = rnd(-ti) : rem inizializzazione random
 930 for i=1 to l
 940 c(i)=int(rnd(1)*max)+min
@@ -232,7 +233,7 @@
 
 1700 if pneri=0 then 1715
 1710 goto 1800
-1715 if dvu=1 then 180
+1715 if dvu=1 then 1800
 
 1720 for j=1 to dvu :rem rimosso -1
 1725 cv1 = 0
@@ -260,10 +261,65 @@
 2000 next i
 
 2050 for i=1 to 30 : ? : next i
-2055 ?chr$(147)
-2060 if pneri=4 then 2100 :rem hai vinto
-2070 goto 2200 :rem hai perso
+2060 if pneri=4 then 2500 :rem hai vinto
+2070 goto 2600:rem hai perso
 
-2100 ?"hai vinto!!!!!!"
+2500 rem ***** schermata vincita *****
+2510 rem ?chr$(147)
+2520 poke 646, 13
+2525 ?tab(13);"**************"
+2530 ?tab(13);"*            *"
+2535 ?tab(13);"* ";
+2540 poke 646, 3
+2545 ?"hai vinto!";
+2550 poke 646, 13
+2555 ?" *"
+2560 ?tab(13);"*            *"
+2565 ?tab(13);"**************"
+2570 poke 646, 14
+2575 for i=1 to 7 : ? : next i
+2580 ?tab(4); "premere un tasto per continuare":?
+2585 get a$ : if a$="" then 2585
+2590 goto 200 : rem goto menu
 
-2200 ?"hai perso :("
+2600 rem ***** schermata perdita *****
+2610 rem ?chr$(147)
+2620 poke 646, 13
+2625 ?tab(13);"**************"
+2630 ?tab(13);"*            *"
+2635 ?tab(13);"* ";chr$(159)"hai perso!";chr$(153);" *"
+2640 ?tab(13);"*            *"
+2655 ?tab(13);"* ";chr$(159);"soluzione:";chr$(153);" *"
+2657 ?tab(13);"*            *"
+2660 ?tab(13);"* - ";chr$(159);nc;chr$(153);" - *"
+2662 ?tab(13);"*            *"
+2665 ?tab(13);"**************"
+2670 poke 646, 14
+2675 for i=1 to 5 : ? : next i
+2680 ?tab(4); "premere un tasto per continuare":?
+2685 get a$ : if a$="" then 2685
+2690 goto 200 : rem goto menu
+
+3000 rem ***** schermata crediti *****
+3010 ?chr$(147)
+3020 poke 646, 13
+3030 ?tab(14);"***********"
+3040 ?tab(14);"*";
+3050 poke 646, 3
+3060 ?" credits ";
+3070 poke 646, 13:?"*"
+3080 ?tab(14);"***********"
+3090 poke 646, 14:?:?
+3100 ?tab(16)"scuola:":?
+3110 ?tab(11)"iis einaudiscarpa" 
+3120 ?tab(9)"montebelluna, treviso":?:?:?
+3130 ?tab(15)"studenti:":?
+3140 ?tab(11)"favero  francesco"
+3150 ?tab(9)"michieletto francesco"
+3160 ?tab(12)"sartor riccardo":?:?:?:?
+3170 ?tab(6); "premere un tasto per uscire":?
+3180 get a$ : if a$="" then 3180
+3190 ?chr$(147)
+3200 poke 53281, 6 : rem reset sfondo
+3210 poke 53280, 14 : rem reset bordi esterni schermo
+3220 poke 646, 14 : rem reset testo
